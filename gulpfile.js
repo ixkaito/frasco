@@ -39,11 +39,11 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
  * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
  */
 gulp.task('compass', function () {
-  gulp.src('assets/_sass/**/*')
+  gulp.src('./assets/_sass/**/*')
     .pipe(plumber())
     .pipe(compass({
       config_file: 'config.rb',
-      // comments: false,
+      comments: false,
       css: 'assets/css/',
       sass: 'assets/_sass/'
     }));
@@ -54,18 +54,12 @@ gulp.task('compass', function () {
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
-  gulp.watch('assets/_sass/**/*', ['compass']);
+  gulp.watch('./assets/_sass/**/*', ['compass']);
   gulp.watch([
-    // '!./node_modules/**',
-    // '!./_site/**/*',
-    // '!./.sass-cache/**/*',
     './**/*.html',
     './*.md',
-    // './*.md',
-    './assets/css/**/*',
-    // './assets/fonts/**/*',
-    // './assets/images/**/*',
-    // './assets/js/**/*'
+    './assets/**/*',
+    '!./assets/_sass/**/*'
   ], ['jekyll-rebuild']);
 });
 
