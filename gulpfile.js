@@ -9,6 +9,17 @@ var messages = {
 };
 
 /**
+ * Wait for jekyll-build, then launch the Server
+ */
+gulp.task('server', ['jekyll-build'], function() {
+  browserSync({
+    server: {
+      baseDir: '_site'
+    }
+  });
+});
+
+/**
  * Build the Jekyll Site
  */
 gulp.task('jekyll-build', function (done) {
@@ -25,29 +36,17 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
 });
 
 /**
- * Wait for jekyll-build, then launch the Server
- */
-gulp.task('browser-sync', ['compass', 'jekyll-build'], function() {
-  browserSync({
-    server: {
-      baseDir: '_site'
-    }
-  });
-});
-
-/**
  * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
  */
 gulp.task('compass', function () {
-  gulp.src('assets/_sass/**/*.scss')
+  gulp.src('assets/_sass/**/*')
     .pipe(plumber())
     .pipe(compass({
       config_file: 'config.rb',
       // comments: false,
-      css: '_site/assets/css/',
+      css: 'assets/css/',
       sass: 'assets/_sass/'
-    }))
-    .pipe(browserSync.reload({stream: true}));
+    }));
 });
 
 /**
@@ -55,12 +54,20 @@ gulp.task('compass', function () {
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
-  gulp.watch('assets/_sass/*.scss', ['compass']);
-  gulp.watch(['index.html', '_layouts/*.html', '_posts/*'], ['jekyll-rebuild']);
+  gulp.watch('assets/_sass/**/*', ['compass']);
+  gulp.watch([
+    '!./node_modules/**',
+    '!./_site/**/*',
+    '!./.sass-cache/**/*',
+    './**/*.html',
+    './*.md',
+    './assets/**/*',
+    '!./assets/_sass/**/*'
+  ], ['jekyll-rebuild']);
 });
 
 /**
  * Default task, running just `gulp` will compile the sass,
  * compile the jekyll site, launch BrowserSync & watch files.
  */
-gulp.task('default', ['browser-sync', 'watch']);
+gulp.task('default', ['server', 'watch']);
