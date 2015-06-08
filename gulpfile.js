@@ -11,7 +11,7 @@ var messages = {
 /**
  * Wait for jekyll-build, then launch the Server
  */
-gulp.task('server', ['jekyll-build'], function() {
+gulp.task('server', ['compass', 'jekyll-build'], function() {
   browserSync({
     server: {
       baseDir: '_site'
@@ -56,13 +56,16 @@ gulp.task('compass', function () {
 gulp.task('watch', function () {
   gulp.watch('assets/_sass/**/*', ['compass']);
   gulp.watch([
-    '!./node_modules/**',
-    '!./_site/**/*',
-    '!./.sass-cache/**/*',
+    // '!./node_modules/**',
+    // '!./_site/**/*',
+    // '!./.sass-cache/**/*',
     './**/*.html',
     './*.md',
-    './assets/**/*',
-    '!./assets/_sass/**/*'
+    // './*.md',
+    './assets/css/**/*',
+    // './assets/fonts/**/*',
+    // './assets/images/**/*',
+    // './assets/js/**/*'
   ], ['jekyll-rebuild']);
 });
 
