@@ -8,13 +8,21 @@ var messages = {
   jekyllRebuild: 'Rebuilded Jekyll'
 };
 
+var port      = 4000;
+var destDir   = '_site';
+var postsDir  = '_posts';
+var assetsDir = 'assets';
+var assetsCss = 'assets/css';
+var assetsSass = 'assets/_sass';
+
 /**
  * Wait for jekyll-build, then launch the Server
  */
 gulp.task('server', ['compass', 'jekyll-build'], function() {
   browserSync({
+    port: port,
     server: {
-      baseDir: '_site'
+      baseDir: destDir,
     }
   });
 });
@@ -39,13 +47,13 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
  * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
  */
 gulp.task('compass', function () {
-  gulp.src('./assets/_sass/**/*')
+  gulp.src(assetsSass + '/**/*')
     .pipe(plumber())
     .pipe(compass({
       config_file: 'config.rb',
       comments: false,
-      css: 'assets/css/',
-      sass: 'assets/_sass/'
+      css: assetsCss,
+      sass: assetsSass
     }));
 });
 
@@ -54,13 +62,14 @@ gulp.task('compass', function () {
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
-  gulp.watch('./assets/_sass/**/*', ['compass']);
+  gulp.watch(assetsSass + '/**/*', ['compass']);
   gulp.watch([
+    '!' + destDir + '/**/*',
+    '!' + assetsSass + '/**/*',
     './**/*.html',
     './*.md',
-    '_posts/**/*',
-    './assets/**/*',
-    '!./assets/_sass/**/*'
+    postsDir + '/**/*',
+    assetsDir + '/**/*'
   ], ['jekyll-rebuild']);
 });
 
