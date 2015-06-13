@@ -5,7 +5,7 @@ var plumber     = require('gulp-plumber');
 var cp          = require('child_process');
 
 var messages = {
-  jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
+  jekyllBuild: 'Rebuilded Jekyll'
 };
 
 /**
