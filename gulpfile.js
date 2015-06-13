@@ -5,7 +5,7 @@ var plumber     = require('gulp-plumber');
 var cp          = require('child_process');
 
 var messages = {
-  jekyllBuild: 'Rebuilded Jekyll'
+  jekyllRebuild: 'Rebuilded Jekyll'
 };
 
 /**
@@ -23,7 +23,6 @@ gulp.task('server', ['compass', 'jekyll-build'], function() {
  * Build the Jekyll Site
  */
 gulp.task('jekyll-build', function (done) {
-  browserSync.notify(messages.jekyllBuild);
   return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
     .on('close', done);
 });
@@ -32,6 +31,7 @@ gulp.task('jekyll-build', function (done) {
  * Rebuild Jekyll & do page reload
  */
 gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
+  browserSync.notify(messages.jekyllRebuild);
   browserSync.reload();
 });
 
