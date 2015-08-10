@@ -73,10 +73,12 @@ gulp.task('compass', function () {
 gulp.task('watch', function () {
   gulp.watch(config.paths.sass + '/**/*', ['compass']);
   gulp.watch([
+    '!./node_modules/**/*',
+    '!./.sass-cache/**/*',
     '!' + config.paths.dest + '/**/*',
     '!' + config.paths.sass + '/**/*',
     './**/*.html',
-    './*.md',
+    './**/*.md',
     config.paths.posts + '/**/*',
     config.paths.assets + '/**/*'
   ], ['jekyll-rebuild']);
