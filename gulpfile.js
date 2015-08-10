@@ -4,24 +4,23 @@ var compass     = require('gulp-compass');
 var plumber     = require('gulp-plumber');
 var cp          = require('child_process');
 
-var port      = 4000;
-
-var messages = {
-  jekyllRebuild: 'Rebuilded Jekyll'
-};
-
-var paths = {
-  dest:   '_site',
-  posts:  '_posts',
-  assets: 'assets',
-  css:    'assets/css',
-  sass:   'assets/_sass'
-};
-
-var compass = {
-  config:   './config.rb',
-  style:    'compressed',
-  comments: false
+var config = {
+  port: 4000,
+  messages: {
+    jekyllRebuild: 'Rebuilded Jekyll'
+  },
+  paths: {
+    dest:   '_site',
+    posts:  '_posts',
+    assets: 'assets',
+    css:    'assets/css',
+    sass:   'assets/_sass'
+  },
+  compass: {
+    config:   './config.rb',
+    style:    'compressed',
+    comments: false
+  }
 };
 
 /**
@@ -29,9 +28,9 @@ var compass = {
  */
 gulp.task('server', ['compass', 'jekyll-build'], function() {
   browserSync({
-    port: port,
+    port: config.port,
     server: {
-      baseDir: paths.dest,
+      baseDir: config.paths.dest,
     }
   });
 });
@@ -56,14 +55,14 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
  * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
  */
 gulp.task('compass', function () {
-  gulp.src(paths.sass + '/**/*')
+  gulp.src(config.paths.sass + '/**/*')
     .pipe(plumber())
     .pipe(compass({
-      config_file: compass.config,
-      style: compass.style,
-      comments: compass.comments,
-      css: paths.css,
-      sass: paths.sass
+      config_file: config.compass.config,
+      style: config.compass.style,
+      comments: config.compass.comments,
+      css: config.paths.css,
+      sass: config.paths.sass
     }));
 });
 
@@ -72,14 +71,14 @@ gulp.task('compass', function () {
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
-  gulp.watch(paths.sass + '/**/*', ['compass']);
+  gulp.watch(config.paths.sass + '/**/*', ['compass']);
   gulp.watch([
-    '!' + paths.dest + '/**/*',
-    '!' + paths.sass + '/**/*',
+    '!' + config.paths.dest + '/**/*',
+    '!' + config.paths.sass + '/**/*',
     './**/*.html',
     './*.md',
-    paths.posts + '/**/*',
-    paths.assets + '/**/*'
+    config.paths.posts + '/**/*',
+    config.paths.assets + '/**/*'
   ], ['jekyll-rebuild']);
 });
 
