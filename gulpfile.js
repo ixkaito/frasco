@@ -14,6 +14,11 @@ var postsDir  = '_posts';
 var assetsDir = 'assets';
 var assetsCss = 'assets/css';
 var assetsSass = 'assets/_sass';
+var compass = {
+  config:   './config.rb',
+  style:    'compressed',
+  comments: false
+};
 
 /**
  * Wait for jekyll-build, then launch the Server
@@ -50,8 +55,9 @@ gulp.task('compass', function () {
   gulp.src(assetsSass + '/**/*')
     .pipe(plumber())
     .pipe(compass({
-      config_file: 'config.rb',
-      comments: false,
+      config_file: compass.config,
+      style: compass.style,
+      comments: compass.comments,
       css: assetsCss,
       sass: assetsSass
     }));
