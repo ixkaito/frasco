@@ -1,0 +1,36 @@
+{
+  "port": 4000,
+
+  "tasks": {
+    "compass":      true,
+    "browserify":   true,
+    "imagemin":     true,
+    "browser-sync": true,
+    "watch":        true
+  },
+
+  "paths": {
+    "dest":      "_site",
+    "posts":     "_posts",
+    "assets":    "./assets",
+    "css":       "css",
+    "js":        "js",
+    "images":    "images",
+    "sass":      "_sass",
+    "jsSrc":     "_js",
+    "imagesSrc": "_images"
+  },
+
+  "compass": {
+    "config":   "./config.rb",
+    "style":    "compressed",
+    "comments": false
+  },
+
+  "js": {
+    "src": [
+      "main.js"
+    ],
+    "dist": "main.js"
+  }
+}
