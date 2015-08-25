@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-About
+# About
 
 [Home]({{site.baseurl}}/)
 
