@@ -47,7 +47,7 @@ for (var i = 0; i <= config.js.src.length - 1; i++) {
 /**
  * Wait for jekyll-build, then launch the Server
  */
-gulp.task('server', ['compass', 'jekyll-build'], function() {
+gulp.task('jekyll', ['compass', 'jekyll-build'], function() {
   browserSync({
     port: config.port,
     server: {
@@ -69,9 +69,7 @@ gulp.task('jekyll-build', function (done) {
  */
 gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
   browserSync.notify('Rebuilded Jekyll');
-  if (tasks['browser-sync']) {
-    browserSync.reload();
-  }
+  browserSync.reload();
 });
 
 /**

@@ -2,10 +2,10 @@
   "port": 4000,
 
   "tasks": {
+    "jekyll":       true,
     "compass":      true,
     "browserify":   true,
     "imagemin":     true,
-    "browser-sync": true,
     "watch":        true
   },
 
