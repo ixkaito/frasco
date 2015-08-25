@@ -1,7 +1,7 @@
-gulp-jekyll-combo
+Combo
 =============================
 
-Gulp, Jekyll, Compass, and Bourbon
+Gulp, Jekyll, Compass, and Bourbon (Neat, Bitters)
 
 ## System Preparation
 
