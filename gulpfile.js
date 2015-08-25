@@ -146,17 +146,19 @@ gulp.task('watch', ['watchify'], function () {
   watch(paths.sass + '/**/*', function () {
     gulp.start('compass');
   });
-  gulp.watch([
-    '!./node_modules/**/*',
-    '!./.sass-cache/**/*',
-    '!' + paths.dest + '/**/*',
-    '**/*.html',
-    '**/*.md',
-    paths.posts + '/**/*',
-    paths.css + '/**/*',
-    paths.js + '/**/*',
-    paths.images + '/**/*'
-  ], ['jekyll-rebuild']);
+  if (config.tasks['jekyll']) {
+    gulp.watch([
+      '!./node_modules/**/*',
+      '!./.sass-cache/**/*',
+      '!' + paths.dest + '/**/*',
+      '**/*.html',
+      '**/*.md',
+      paths.posts + '/**/*',
+      paths.css + '/**/*',
+      paths.js + '/**/*',
+      paths.images + '/**/*'
+    ], ['jekyll-rebuild']);
+  }
 });
 
 /**
