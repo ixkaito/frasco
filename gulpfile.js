@@ -149,7 +149,6 @@ gulp.task('watch', ['watchify'], function () {
   if (config.tasks['jekyll']) {
     gulp.watch([
       '!./node_modules/**/*',
-      '!./.sass-cache/**/*',
       '!' + paths.dest + '/**/*',
       '**/*.html',
       '**/*.md',

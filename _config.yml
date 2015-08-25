@@ -4,6 +4,7 @@ highlighter: pygments # or rouge or null
 exclude:
   - node_modules
   - gulpfile.js
+  - gulpconfig.json
   - package.json
   - config.rb
   - npm-debug.log
