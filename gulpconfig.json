@@ -2,7 +2,8 @@
   "port": 4000,
 
   "tasks": {
-    "compass":      true,
+    "sass":         true,
+    "compass":      false,
     "browserify":   true,
     "imagemin":     true,
     "jekyll":       true,
@@ -19,6 +20,18 @@
     "sass":      "_sass",
     "jsSrc":     "_js",
     "imagesSrc": "_images"
+  },
+
+  "sass": {
+    "outputStyle": "compressed"
+  },
+
+  "autoprefixer" : {
+    "browsers": [
+      "> 1%",
+      "last 2 versions",
+      "Firefox ESR"
+    ]
   },
 
   "compass": {

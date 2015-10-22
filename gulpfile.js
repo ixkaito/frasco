@@ -3,26 +3,32 @@
 /**
  * Gulp modules
  */
-var gulp        = require('gulp');
-var newer       = require('gulp-newer');
-var plumber     = require('gulp-plumber');
-var browserSync = require('browser-sync');
-var compass     = require('gulp-compass');
-var imagemin    = require('gulp-imagemin');
-var pngquant    = require('imagemin-pngquant');
-var browserify  = require('browserify');
-var watchify    = require('watchify');
-var source      = require('vinyl-source-stream');
-var buffer      = require('vinyl-buffer');
-var uglify      = require('gulp-uglify');
-var watch       = require('gulp-watch');
-var cp          = require('child_process');
+var gulp         = require('gulp');
+var newer        = require('gulp-newer');
+var plumber      = require('gulp-plumber');
+var browserSync  = require('browser-sync');
+var sass         = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
+var compass      = require('gulp-compass');
+var imagemin     = require('gulp-imagemin');
+var pngquant     = require('imagemin-pngquant');
+var browserify   = require('browserify');
+var watchify     = require('watchify');
+var source       = require('vinyl-source-stream');
+var buffer       = require('vinyl-buffer');
+var uglify       = require('gulp-uglify');
+var watch        = require('gulp-watch');
+var cp           = require('child_process');
 
 // Load configurations set variables
 var config = require('./gulpconfig.json');
 var tasks = [];
 var paths = {};
 var jsSrc = [];
+
+if (config.tasks.compass) {
+  config.tasks.sass = false;
+}
 
 Object.keys(config.tasks).forEach(function (key) {
   if (config.tasks[key]) {
@@ -70,6 +76,17 @@ gulp.task('jekyll-build', function (done) {
 gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
   browserSync.notify('Rebuilded Jekyll');
   browserSync.reload();
+});
+
+/**
+ * Sass
+ */
+gulp.task('sass', function () {
+  return gulp.src(paths.sass + '/**/*')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(sass({outputStyle: config.sass.outputStyle}))
+    .pipe(autoprefixer({ browsers: config.autoprefixer.browsers }))
+    .pipe(gulp.dest(paths.css));
 });
 
 /**
@@ -140,12 +157,22 @@ function compile(watching) {
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', ['watchify'], function () {
-  watch(paths.imagesSrc + '/**/*', function () {
-    gulp.start('imagemin');
-  });
-  watch(paths.sass + '/**/*', function () {
-    gulp.start('compass');
-  });
+  if (config.tasks.imagemin) {
+    watch(paths.imagesSrc + '/**/*', function () {
+      gulp.start('imagemin');
+    });
+  }
+
+  if (config.tasks.compass) {
+    watch(paths.sass + '/**/*', function () {
+      gulp.start('compass');
+    });
+  } else if (config.tasks.sass) {
+    watch(paths.sass + '/**/*', function () {
+      gulp.start('sass');
+    });
+  }
+
   if (config.tasks['jekyll']) {
     gulp.watch([
       '!./node_modules/**/*',
