@@ -25,6 +25,7 @@ var config = require('./gulpconfig.json');
 var tasks = [];
 var paths = {};
 var jsSrc = [];
+var build = [];
 
 if (config.tasks.compass) {
   config.tasks.sass = false;
@@ -53,7 +54,7 @@ for (var i = 0; i <= config.js.src.length - 1; i++) {
 /**
  * Wait for jekyll-build, then launch the Server
  */
-gulp.task('jekyll', ['compass', 'jekyll-build'], function() {
+gulp.task('jekyll', ['jekyll-build'], function() {
   browserSync({
     port: config.port,
     server: {
@@ -73,7 +74,15 @@ gulp.task('jekyll-build', function (done) {
 /**
  * Rebuild Jekyll & do page reload
  */
-gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
+build = ['jekyll-build'];
+
+if (config.tasks.compass) {
+  build.unshift('compass');
+} else if (config.tasks.sass) {
+  build.unshift('sass');
+}
+
+gulp.task('jekyll-rebuild', build, function () {
   browserSync.notify('Rebuilded Jekyll');
   browserSync.reload();
 });
