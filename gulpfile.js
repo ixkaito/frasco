@@ -183,7 +183,7 @@ gulp.task('watch', ['watchify'], function () {
   }
 
   if (config.tasks['jekyll']) {
-    gulp.watch([
+    watch([
       '!./node_modules/**/*',
       '!./README.md',
       '!' + paths.dest + '/**/*',
@@ -191,12 +191,14 @@ gulp.task('watch', ['watchify'], function () {
       '_layouts/**/*',
       '_posts/**/*',
       '*.html',
-      '**/*.md',
+      './**/*.md',
       paths.posts + '/**/*',
       paths.css + '/**/*',
       paths.js + '/**/*',
       paths.images + '/**/*'
-    ], ['jekyll-rebuild']);
+    ], function () {
+      gulp.start('jekyll-rebuild');
+    });
   }
 });
 
