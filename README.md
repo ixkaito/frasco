@@ -257,3 +257,11 @@ The distribution JavaScript file name.
 default: `"main.js"`  
 options: string  
 example: `"script.js"`
+
+## License
+
+GPLv2 or later
+
+## Copyright
+
+&copy; 2015 [Kite](https://github.com/ixkaito)
