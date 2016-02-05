@@ -1,5 +1,5 @@
 {
-  "name": "combo",
+  "name": "beaker",
   "version": "0.2.0",
   "description": "Gulp, Jekyll, Compass, and Bourbon (Neat, Bitters)",
   "main": "gulpfile.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ixkaito/combo.git"
+    "url": "https://github.com/ixkaito/beaker.git"
   },
   "keywords": [
     "Gulp",
@@ -25,9 +25,9 @@
   "author": "Kite",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ixkaito/combo/issues"
+    "url": "https://github.com/ixkaito/beaker/issues"
   },
-  "homepage": "https://github.com/ixkaito/combo",
+  "homepage": "https://github.com/ixkaito/beaker",
   "devDependencies": {
     "browser-sync": "^2.11.1",
     "browserify": "^13.0.0",
