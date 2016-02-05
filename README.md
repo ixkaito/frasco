@@ -1,4 +1,4 @@
-Combo
+Beaker
 =============================
 
 Gulp, Jekyll, Compass, and Bourbon (Neat, Bitters)
@@ -40,7 +40,7 @@ You can easily deploy your site build to a gh-pages branch. First, follow the in
 var deploy = require("gulp-gh-pages");
 
 gulp.task("deploy", ["jekyll-build"], function () {
-    return gulp.src("./_site/**/*")
-        .pipe(deploy());
+  return gulp.src("./_site/**/*")
+    .pipe(deploy());
 });
 ```
