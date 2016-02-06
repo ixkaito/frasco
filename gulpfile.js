@@ -181,7 +181,6 @@ gulp.task('watch', ['watchify'], function () {
       '!' + paths.dest + '/**/*',
       '_includes/**/*',
       '_layouts/**/*',
-      '_posts/**/*',
       '*.html',
       './**/*.md',
       paths.posts + '/**/*',
