@@ -258,6 +258,6 @@ default: `"main.js"`
 options: string  
 example: `"script.js"`
 
-## Copyright/License
+## Copyright / License
 
 Copyright &copy; 2015-2016 the contributors of the Beaker project under the [GPL version 2](https://raw.githubusercontent.com/ixkaito/beaker/master/LICENSE) or later.
