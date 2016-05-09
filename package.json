@@ -4,7 +4,12 @@
   "description": "Jekyll starter project for Gulp with Bourbon/Neat/Bitters, etc.",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp",
+    "sass": "gulp sass",
+    "browserify": "gulp browserify",
+    "imagemin": "gulp imagemin",
+    "jekyll": "gulp jekyll",
+    "watch": "gulp watch"
   },
   "repository": {
     "type": "git",
