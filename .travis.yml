@@ -1,9 +1,20 @@
-language: node_js
-node_js:
-  - "5"
-  - "5.1"
-  - "4"
-  - "4.2"
-  - "4.1"
-  - "4.0"
-script: npm start
+language: ruby
+rvm:
+  - 2.2
+
+branches:
+  only:
+  - master
+
+before_install:
+  - npm install
+
+install: gem install jekyll html-proofer
+
+script: npm run travis
+
+env:
+  global:
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+
+sudo: false
