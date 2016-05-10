@@ -6,11 +6,11 @@ branches:
   only:
   - master
 
-install: gem install jekyll html-proofer
+install:
+  - npm install
+  - gem install jekyll html-proofer
 
-script:
-  - jekyll build
-  - htmlproofer ./_site
+script: jekyll build && htmlproofer ./_site
 
 env:
   global:
