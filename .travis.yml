@@ -20,7 +20,7 @@ install:
 
 script:
   - jekyll build
-  - npm start
+  - npm test
   - htmlproofer ./_site
 
 sudo: false

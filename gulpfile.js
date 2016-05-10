@@ -180,3 +180,8 @@ gulp.task('build', ['sass', 'browserify', 'imagemin', 'jekyll-build']);
  * launch BrowserSync, and watch files. Tasks can be configured by gulpconfig.json.
  */
 gulp.task('default', tasks);
+
+/**
+ * Test
+ */
+gulp.task('test', ['build']);
