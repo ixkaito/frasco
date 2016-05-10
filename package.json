@@ -5,10 +5,10 @@
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp",
-    "sass": "gulp sass",
     "browserify": "gulp browserify",
     "imagemin": "gulp imagemin",
-    "jekyll": "gulp jekyll",
+    "sass": "gulp sass",
+    "server": "gulp server",
     "watch": "gulp watch"
   },
   "repository": {

@@ -1,12 +1,10 @@
-# Frasco
-
-[![Build Status](https://travis-ci.org/ixkaito/frasco.svg?branch=master)](https://travis-ci.org/ixkaito/frasco)
+# Frasco [![Build Status](https://travis-ci.org/ixkaito/frasco.svg?branch=master)](https://travis-ci.org/ixkaito/frasco)
 
 __Jekyll starter project for Gulp with Bourbon/Neat/Bitters, etc.__
 
 ## Version
 
-0.2.0
+0.3.0
 
 ## Features
 
@@ -30,7 +28,6 @@ To use this starter project, you'll need the following things installed on your 
 
 1. [Jekyll](http://jekyllrb.com/) - `$ gem install jekyll`
 2. [NodeJS](http://nodejs.org) - use the installer, Homebrew, etc.
-3. [GulpJS](https://github.com/gulpjs/gulp) - `$ npm install -g gulp` (Mac users may need sudo)
 
 ## Local Installation
 
@@ -41,10 +38,30 @@ To use this starter project, you'll need the following things installed on your 
 
 ### Development Mode
 
-This will give you file watching, browser synchronisation, auto-rebuild, CSS injecting etc etc.
+This will give you file watching, browser synchronisation, auto-rebuild, CSS injecting, etc.
+
+```shell
+$ npm start
+```
+
+Or, if you have installed Gulp globally, this is also available and is same as `npm start`.
 
 ```shell
 $ gulp
+```
+
+#### To See More Commands
+
+```shell
+$ npm run
+```
+
+__Examples:__
+
+This will compile the Sass files
+
+```shell
+$ npm run sass
 ```
 
 ### Jekyll
@@ -66,7 +83,7 @@ gulp.task("deploy", ["jekyll-build"], function () {
 
 ## Configurations and Defaults
 
-You can change the configuration by editing `gulpconfig.json`
+You can change the configurations by editing `gulpconfig.json`
 
 ### port
 
@@ -76,13 +93,6 @@ options: integer
 ### tasks
 
 Tasks to run when you exec `gulp` command.
-
-#### sass
-
-To compile Sass.
-
-default: `true`  
-options: boolean (`true` / `false`)
 
 #### browserify
 
@@ -98,7 +108,14 @@ To minify images.
 default: `true`  
 options: boolean (`true` / `false`)
 
-#### jekyll
+#### sass
+
+To compile Sass.
+
+default: `true`  
+options: boolean (`true` / `false`)
+
+#### server
 
 To compile sources via Jekyll and to keep browsers in sync with file changes via Browsersync.
 
