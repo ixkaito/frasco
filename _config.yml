@@ -6,6 +6,5 @@ exclude:
   - gulpfile.js
   - gulpconfig.json
   - package.json
-  - config.rb
   - npm-debug.log
   - README.md

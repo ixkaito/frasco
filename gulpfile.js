@@ -9,7 +9,6 @@ var plumber      = require('gulp-plumber');
 var browserSync  = require('browser-sync');
 var sass         = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
-var compass      = require('gulp-compass');
 var imagemin     = require('gulp-imagemin');
 var pngquant     = require('imagemin-pngquant');
 var browserify   = require('browserify');
@@ -26,10 +25,6 @@ var tasks = [];
 var paths = {};
 var jsSrc = [];
 var build = [];
-
-if (config.tasks.compass) {
-  config.tasks.sass = false;
-}
 
 Object.keys(config.tasks).forEach(function (key) {
   if (config.tasks[key]) {
@@ -91,22 +86,6 @@ gulp.task('sass', function () {
 });
 
 /**
- * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
- */
-gulp.task('compass', function () {
-  return gulp.src(paths.sass + '/**/*')
-    .pipe(plumber())
-    .pipe(compass({
-      config_file: config.compass.config,
-      style: config.compass.style,
-      comments: config.compass.comments,
-      css: paths.css,
-      sass: paths.sass,
-      image: paths.images
-    }));
-});
-
-/**
  * Imagemin
  */
 gulp.task('imagemin', function () {
@@ -164,11 +143,7 @@ gulp.task('watch', ['watchify'], function () {
     });
   }
 
-  if (config.tasks.compass) {
-    watch(paths.sass + '/**/*', function () {
-      gulp.start('compass');
-    });
-  } else if (config.tasks.sass) {
+  if (config.tasks.sass) {
     watch(paths.sass + '/**/*', function () {
       gulp.start('sass');
     });
