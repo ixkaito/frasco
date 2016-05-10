@@ -158,6 +158,7 @@ gulp.task('watch', ['watchify'], function () {
       '_layouts/**/*',
       '*.html',
       './**/*.md',
+      './**/*.markdown',
       paths.posts + '/**/*',
       paths.css + '/**/*',
       paths.js + '/**/*',
