@@ -13,12 +13,14 @@ env:
 
 before_install:
   - rvm install 2.1
-  - ruby -v
 
 install:
   - npm install
   - gem install jekyll html-proofer
 
-script: jekyll build && htmlproofer ./_site
+script:
+  - jekyll build
+  - npm run travis
+  - htmlproofer ./_site
 
 sudo: false
