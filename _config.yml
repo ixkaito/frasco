@@ -7,3 +7,4 @@ exclude:
   - package.json
   - npm-debug.log
   - README.md
+  - LICENSE
