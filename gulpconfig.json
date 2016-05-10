@@ -2,10 +2,10 @@
   "port": 4000,
 
   "tasks": {
-    "sass":         true,
     "browserify":   true,
     "imagemin":     true,
-    "jekyll":       true,
+    "sass":         true,
+    "server":       true,
     "watch":        true
   },
 

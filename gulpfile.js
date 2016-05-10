@@ -49,7 +49,7 @@ for (var i = 0; i <= config.js.src.length - 1; i++) {
 /**
  * Wait for jekyll-build, then launch the Server
  */
-gulp.task('jekyll', ['jekyll-build'], function() {
+gulp.task('server', ['jekyll-build'], function() {
   browserSync({
     port: config.port,
     server: {
@@ -149,7 +149,7 @@ gulp.task('watch', ['watchify'], function () {
     });
   }
 
-  if (config.tasks['jekyll']) {
+  if (config.tasks['server']) {
     watch([
       '!./node_modules/**/*',
       '!./README.md',
@@ -172,7 +172,7 @@ gulp.task('watch', ['watchify'], function () {
  * Only minify the images and compile the sass, js, and jekyll site, but do not launch BrowserSync
  * and watch files.
  */
-gulp.task('build', ['sass', 'browserify', 'imagemin']);
+gulp.task('build', ['sass', 'browserify', 'imagemin', 'jekyll-build']);
 
 /**
  * Default task, running just `gulp` will minify the images, compile the sass, js, and jekyll site,
