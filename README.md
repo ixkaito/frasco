@@ -1,4 +1,4 @@
-# Beaker
+# Frasco
 
 __Jekyll starter project for Gulp with Bourbon/Neat/Bitters, etc.__
 
@@ -226,4 +226,4 @@ example: `"script.js"`
 
 ## Copyright / License
 
-Copyright &copy; 2015-2016 the contributors of the Beaker project under the [GPL version 2](https://raw.githubusercontent.com/ixkaito/beaker/master/LICENSE) or later.
+Copyright &copy; 2015-2016 the contributors of the Frasco project under the [GPL version 2](https://raw.githubusercontent.com/ixkaito/frasco/master/LICENSE) or later.
