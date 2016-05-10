@@ -1,19 +1,26 @@
-language: ruby
-rvm:
-  - 2.2
+language: node_js
+node_js:
+  - '5'
+  - '4'
 
 branches:
   only:
   - master
+
+env:
+  - TRAVIS_NODE_VERSION="5"
+  - TRAVIS_NODE_VERSION="4"
+  global:
+    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+
+before_install:
+  - rvm install 2.1
+  - ruby -v
 
 install:
   - npm install
   - gem install jekyll html-proofer
 
 script: jekyll build && htmlproofer ./_site
-
-env:
-  global:
-    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 
 sudo: false
