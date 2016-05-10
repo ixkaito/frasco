@@ -2,10 +2,6 @@
 
 __Jekyll starter project for Gulp with Bourbon/Neat/Bitters, etc.__
 
-## Version
-
-0.3.0
-
 ## Features
 
 - Gulp
