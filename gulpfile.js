@@ -6,7 +6,7 @@
 var gulp         = require('gulp');
 var newer        = require('gulp-newer');
 var plumber      = require('gulp-plumber');
-var browserSync  = require('browser-sync');
+var browserSync  = require('browser-sync').create();
 var sass         = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var imagemin     = require('gulp-imagemin');
@@ -50,7 +50,7 @@ for (var i = 0; i <= config.js.src.length - 1; i++) {
  * Wait for jekyll-build, then launch the Server
  */
 gulp.task('server', ['jekyll-build'], function() {
-  browserSync({
+  return browserSync.init({
     port: config.port,
     server: {
       baseDir: config.paths.dest,
