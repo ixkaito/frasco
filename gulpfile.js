@@ -169,7 +169,13 @@ gulp.task('watch', ['watchify'], function () {
 });
 
 /**
- * Default task, running just `gulp` will compile the sass,
- * compile the jekyll site, launch BrowserSync & watch files.
+ * Only minify the images and compile the sass, js, and jekyll site, but do not launch BrowserSync
+ * and watch files.
+ */
+gulp.task('build', ['sass', 'browserify', 'imagemin']);
+
+/**
+ * Default task, running just `gulp` will minify the images, compile the sass, js, and jekyll site,
+ * launch BrowserSync, and watch files. Tasks can be configured by gulpconfig.json.
  */
 gulp.task('default', tasks);
