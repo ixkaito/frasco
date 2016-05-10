@@ -8,8 +8,6 @@ branches:
   - master
 
 env:
-  - TRAVIS_NODE_VERSION="5"
-  - TRAVIS_NODE_VERSION="4"
   global:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 
