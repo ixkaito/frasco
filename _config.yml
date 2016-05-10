@@ -1,5 +1,4 @@
 title: My New Frasco Site
-markdown: redcarpet
 highlighter: pygments # or rouge or null
 exclude:
   - node_modules
