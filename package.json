@@ -9,6 +9,7 @@
     "imagemin": "gulp imagemin",
     "sass": "gulp sass",
     "server": "gulp server",
+    "test": "gulp test",
     "watch": "gulp watch"
   },
   "repository": {
