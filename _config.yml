@@ -1,5 +1,4 @@
 title: My New Frasco Site
-highlighter: pygments # or rouge or null
 exclude:
   - node_modules
   - gulpfile.js
