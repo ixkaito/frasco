@@ -1,5 +1,7 @@
 # Frasco
 
+[![Build Status](https://travis-ci.org/ixkaito/frasco.svg?branch=master)](https://travis-ci.org/ixkaito/frasco)
+
 __Jekyll starter project for Gulp with Bourbon/Neat/Bitters, etc.__
 
 ## Version
