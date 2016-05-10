@@ -1,17 +1,16 @@
-language: node_js
-node_js:
-  - '5'
-  - '4'
+language: ruby
+rvm:
+  - 2.2
 
 branches:
   only:
   - master
 
-install:
-  - gem install jekyll html-proofer
-  - npm install
+install: gem install jekyll html-proofer
 
-script: npm run travis
+script:
+  - jekyll build
+  - htmlproofer ./_site
 
 env:
   global:
