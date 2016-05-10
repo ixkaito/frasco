@@ -1,4 +1,4 @@
-# Frasco [![GitHub release](https://img.shields.io/github/release/ixkaito/frasco.svg?maxAge=2592000)](https://github.com/ixkaito/frasco/releases) [![Build Status](https://travis-ci.org/ixkaito/frasco.svg?branch=master)](https://travis-ci.org/ixkaito/frasco)
+# Frasco [![GitHub release](https://img.shields.io/github/release/ixkaito/frasco.svg?maxAge=2592000)](https://github.com/ixkaito/frasco/releases) [![Build Status](https://travis-ci.org/ixkaito/frasco.svg?branch=master)](https://travis-ci.org/ixkaito/frasco) [![license](https://img.shields.io/github/license/ixkaito/frasco.svg?maxAge=2592000)](https://raw.githubusercontent.com/ixkaito/frasco/master/LICENSE)
 
 __Jekyll starter project for Gulp with Bourbon/Neat/Bitters, etc.__
 
@@ -241,4 +241,4 @@ example: `"script.js"`
 
 ## Copyright / License
 
-Copyright &copy; 2015-2016 the contributors of the Frasco project under the [GPL version 2](https://raw.githubusercontent.com/ixkaito/frasco/master/LICENSE) or later.
+Copyright © 2015-2016 the contributors of the Frasco project under the [MIT License](https://raw.githubusercontent.com/ixkaito/frasco/master/LICENSE).
