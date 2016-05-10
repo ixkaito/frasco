@@ -1,20 +1,20 @@
-language: ruby
-rvm:
-  - 2.2
+language: node_js
+node_js:
+  - '5'
+  - '4'
 
 branches:
   only:
   - master
 
-before_install:
+install:
+  - gem install jekyll html-proofer
   - npm install
-
-install: gem install jekyll html-proofer
 
 script: npm run travis
 
 env:
   global:
-  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 
 sudo: false
