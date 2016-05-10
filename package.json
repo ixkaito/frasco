@@ -1,6 +1,6 @@
 {
   "name": "beaker",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Jekyll starter project for Gulp with Bourbon/Neat/Bitters, etc.",
   "main": "gulpfile.js",
   "scripts": {
