@@ -20,7 +20,7 @@ install:
 
 script:
   - jekyll build
-  - npm run travis
+  - npm start
   - htmlproofer ./_site
 
 sudo: false
