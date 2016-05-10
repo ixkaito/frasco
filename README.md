@@ -14,7 +14,6 @@ __Jekyll starter project for Gulp with Bourbon/Neat/Bitters, etc.__
 - Bourbon
 - Neat
 - Bitters
-- Compass
 - Imagemin
 - Browserify
 - Watchify
@@ -83,13 +82,6 @@ To compile Sass.
 default: `true`  
 options: boolean (`true` / `false`)
 
-#### compass
-
-To use compass. If `true`, Bathe will ignore the above setting of sass.
-
-default: `false`  
-options: boolean (`true` / `false`)
-
 #### browserify
 
 To use Browserify.
@@ -143,7 +135,7 @@ example: `"./"` (directly under the theme direcotry)
 
 #### css
 
-The CSS destination directory for Sass or Compass.
+The CSS destination directory for Sass.
 
 default: `"css"`  
 options: string  
@@ -211,32 +203,6 @@ List of browsers, which are supported in your theme.
 default: `["> 1%", "last 2 versions", "Firefox ESR"]`  
 options: array. See [Browserslist docs](https://github.com/ai/browserslist#queries) for available queries.
 example: `["> 5%", "last 2 versions", "IE 8"]`
-
-### compass
-
-Compass settings.
-
-#### config
-
-The config file for Compass.
-
-default: `"./config.rb"`  
-options: string  
-example: `"./myconfig.rb"`
-
-#### style
-
-The output style of Compass.
-
-default: `"compressed"`  
-options: `"expanded"`, `"nested"`, `"compact"`, `"compressed"`
-
-#### comments
-
-Show line comments or not.
-
-default: `false`  
-options: boolean (`true` / `false`)
 
 ### js
 
