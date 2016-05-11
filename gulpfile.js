@@ -49,18 +49,6 @@ for (var i = 0; i <= config.js.src.length - 1; i++) {
 }
 
 /**
- * Wait for jekyll-build, then launch the Server
- */
-gulp.task('server', ['jekyll-build'], function() {
-  return browserSync.init({
-    port: config.port,
-    server: {
-      baseDir: config.paths.dest,
-    }
-  });
-});
-
-/**
  * Build the Jekyll Site
  */
 gulp.task('jekyll-build', function (done) {
@@ -74,6 +62,18 @@ gulp.task('jekyll-build', function (done) {
 gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
   browserSync.notify('Rebuilded Jekyll');
   browserSync.reload();
+});
+
+/**
+ * Wait for jekyll-build, then launch the Server
+ */
+gulp.task('server', ['jekyll-build'], function() {
+  return browserSync.init({
+    port: config.port,
+    server: {
+      baseDir: config.paths.dest,
+    }
+  });
 });
 
 /**
