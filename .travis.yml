@@ -10,6 +10,7 @@ branches:
 env:
   global:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+    - GITHUB_REPO: 'ixkaito/frasco'
 
 before_install:
   - rvm install 2.1
@@ -22,5 +23,9 @@ script:
   - jekyll build
   - npm test
   - htmlproofer ./_site
+
+after_success:
+  - if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "master" ]; then exit 0; fi
+  - git push -f -q "https://${GITHUB_TOKEN}@$github.com/${GITHUB_REPO}.git" master:gh-pages > /dev/null 2>&1
 
 sudo: false
