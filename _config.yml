@@ -1,4 +1,8 @@
 title: My New Frasco Site
+description: Jekyll starter project for Gulp with Bourbon/Neat/Bitters, etc.
+url: http://ixkaito.github.io/frasco
+baseurl: /
+
 exclude:
   - node_modules
   - gulpfile.js
