@@ -19,6 +19,8 @@ var uglify       = require('gulp-uglify');
 var watch        = require('gulp-watch');
 var cp           = require('child_process');
 
+var jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
+
 // Load configurations set variables
 var config = require('./gulpconfig.json');
 var tasks = [];
@@ -62,7 +64,7 @@ gulp.task('server', ['jekyll-build'], function() {
  * Build the Jekyll Site
  */
 gulp.task('jekyll-build', function (done) {
-  return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
+  return cp.spawn(jekyll, ['build'], {stdio: 'inherit'})
     .on('close', done);
 });
 
