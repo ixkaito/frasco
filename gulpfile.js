@@ -18,6 +18,7 @@ var buffer       = require('vinyl-buffer');
 var uglify       = require('gulp-uglify');
 var watch        = require('gulp-watch');
 var cp           = require('child_process');
+var argv         = require('yargs').argv;
 
 var jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 
@@ -70,8 +71,14 @@ for (var i = 0; i <= config.js.src.length - 1; i++) {
  * Build the Jekyll Site
  */
 gulp.task('jekyll-build', function (done) {
-  var jekyllConfig = config.jekyll.config.default + ',' + config.jekyll.config.development;
-  return cp.spawn(jekyll, ['build', '--config', jekyllConfig], {stdio: 'inherit'})
+  var jekyllConfig = config.jekyll.config.default;
+  if (argv.production) {
+    process.env.JEKYLL_ENV = 'production';
+    jekyllConfig += config.jekyll.config.production ? ',' + config.jekyll.config.production : '';
+  } else {
+    jekyllConfig += config.jekyll.config.development ? ',' + config.jekyll.config.development : '';
+  }
+  return cp.spawn(jekyll, ['build', '--config', jekyllConfig], {stdio: 'inherit', env: process.env})
     .on('close', done);
 });
 
@@ -191,11 +198,17 @@ gulp.task('watch', ['watchify'], function () {
 });
 
 /**
- * Only minify the images and compile the sass, js, and jekyll site, but do not launch BrowserSync
- * and watch files.
+ * Build for production
  */
 gulp.task('build', build, function (done) {
-  return cp.spawn(jekyll, ['build'], {stdio: 'inherit'})
+  var jekyllConfig = config.jekyll.config.default;
+  if (argv.production) {
+    process.env.JEKYLL_ENV = 'production';
+    jekyllConfig += config.jekyll.config.production ? ',' + config.jekyll.config.production : '';
+  } else {
+    jekyllConfig += config.jekyll.config.development ? ',' + config.jekyll.config.development : '';
+  }
+  return cp.spawn(jekyll, ['build', '--config', jekyllConfig], {stdio: 'inherit', env: process.env})
     .on('close', done);
 });
 
