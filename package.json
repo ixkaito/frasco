@@ -13,7 +13,7 @@
     "sass": "gulp sass",
     "server": "gulp server",
     "server-production": "gulp server --production",
-    "test": "gulp test --production",
+    "test": "gulp test",
     "watch": "gulp watch"
   },
   "repository": {
