@@ -5,10 +5,14 @@
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp",
+    "start-production": "gulp --production",
     "browserify": "gulp browserify",
+    "build": "gulp build",
+    "build-production": "gulp build --production",
     "imagemin": "gulp imagemin",
     "sass": "gulp sass",
     "server": "gulp server",
+    "server-production": "gulp server --production",
     "test": "gulp test",
     "watch": "gulp watch"
   },
