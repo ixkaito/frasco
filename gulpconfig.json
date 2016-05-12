@@ -21,6 +21,14 @@
     "imagesSrc": "_images"
   },
 
+  "jekyll": {
+    "config": {
+      "default": "_config.yml",
+      "development": "",
+      "production": ""
+    }
+  },
+
   "sass": {
     "outputStyle": "compressed"
   },

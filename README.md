@@ -1,20 +1,18 @@
 # Frasco [![GitHub release](https://img.shields.io/github/release/ixkaito/frasco.svg)](https://github.com/ixkaito/frasco/releases) [![Build Status](https://travis-ci.org/ixkaito/frasco.svg?branch=master)](https://travis-ci.org/ixkaito/frasco) [![license](https://img.shields.io/github/license/ixkaito/frasco.svg?maxAge=2592000)](https://github.com/ixkaito/frasco/blob/master/LICENSE)
 
-__Jekyll starter project for Gulp with Bourbon/Neat/Bitters, etc.__
+__Jekyll starter project including full setup for Gulp, Sass, Autoprefixer, Bourbon/Neat/Bitters, Browserify, Imagemin, Browsersync, etc.__
 
 ## Features
 
 - Gulp
 - Sass
 - Autoprefixer
-- Bourbon
-- Neat
-- Bitters
-- Imagemin
+- Bourbon/Neat/Bitters
 - Browserify
 - Watchify
 - UglifyJS
-- Browser-Sync
+- Imagemin
+- Browsersync
 
 Bourbon is a lightweight Sass framework. If you don't use it, it will do nothing to your CSS file.
 
@@ -46,36 +44,25 @@ Or, if you have installed Gulp globally, this is also available and is same as `
 $ gulp
 ```
 
+#### Build for Production
+
+This will set the `JEKYLL_ENV` to `production` and use the production config file(s) set in `gulpconfig.json` to override default settings.
+
+```shell
+$ npm run build-production
+```
+
 #### To See More Commands
+
+This will display all available commands.
 
 ```shell
 $ npm run
 ```
 
-__Examples:__
-
-This will compile the Sass files
-
-```shell
-$ npm run sass
-```
-
 ### Jekyll
 
 As this is just a Jekyll project, you can use any of the commands listed in their [docs](http://jekyllrb.com/docs/usage/)
-
-## Deploy with Gulp
-
-You can easily deploy your site build to a gh-pages branch. First, follow the instructions at [gulp-gh-pages](https://github.com/rowoot/gulp-gh-pages) to get your branch prepared for the deployment and to install the module. Then, in `gulpfile.js` you'll want to include something like the code below. `gulp.src()` needs to be the path to your final site folder, which by default will be `_site`. If you change the `destination` in your `_config.yml` file, be sure to reflect that in your gulpfile.
-
-```javascript
-var deploy = require("gulp-gh-pages");
-
-gulp.task("deploy", ["jekyll-build"], function () {
-  return gulp.src("./_site/**/*")
-    .pipe(deploy());
-});
-```
 
 ## Configurations and Defaults
 
@@ -195,6 +182,38 @@ The directory of image source files to compress.
 default: `"_images"`  
 options: string  
 example: `"src/images"`
+
+### jekyll
+
+Jekyll settings.
+
+#### config
+
+Jekyll config files.
+
+##### default
+
+The default Jekyll config file(s).
+
+default: `"_config.yml`
+options: string (`"FILE1[,FILE2,...]"`)
+example: `"_config1.yml,_config2.yml`
+
+##### development
+
+Development mode config file(s) to override default settings.
+
+default: `""`
+options: string (`"FILE1[,FILE2,...]"`)
+example: `"_config_development"`
+
+##### production
+
+Production mode config file(s) to override default settings.
+
+default: `""`
+options: string (`"FILE1[,FILE2,...]"`)
+example: `"_config_production"`
 
 ### sass
 
