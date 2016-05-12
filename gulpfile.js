@@ -21,19 +21,37 @@ var cp           = require('child_process');
 
 var jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 
-// Load configurations set variables
+// Load configurations & set variables
 var config = require('./gulpconfig.json');
-var tasks = [];
-var paths = {};
-var jsSrc = [];
-var build = [];
+var tasks  = [];
+var build  = [];
+var paths  = {};
+var jsSrc  = [];
 
+/**
+ * All tasks
+ */
 Object.keys(config.tasks).forEach(function (key) {
   if (config.tasks[key]) {
     tasks.push(key);
   }
 });
 
+/**
+ * Build tasks
+ */
+build = tasks.concat();
+var index;
+['server', 'watch'].forEach(function (value) {
+  index = build.indexOf(value);
+  if (index > -1) {
+    build.splice(index, 1);
+  }
+});
+
+/**
+ * Paths
+ */
 Object.keys(config.paths).forEach(function (key) {
   if (key != 'assets') {
     if (config.paths.assets === '') {
@@ -52,7 +70,8 @@ for (var i = 0; i <= config.js.src.length - 1; i++) {
  * Build the Jekyll Site
  */
 gulp.task('jekyll-build', function (done) {
-  return cp.spawn(jekyll, ['build'], {stdio: 'inherit'})
+  var jekyllConfig = config.jekyll.config.default + ',' + config.jekyll.config.development;
+  return cp.spawn(jekyll, ['build', '--config', jekyllConfig], {stdio: 'inherit'})
     .on('close', done);
 });
 
@@ -175,7 +194,10 @@ gulp.task('watch', ['watchify'], function () {
  * Only minify the images and compile the sass, js, and jekyll site, but do not launch BrowserSync
  * and watch files.
  */
-gulp.task('build', ['sass', 'browserify', 'imagemin', 'jekyll-build']);
+gulp.task('build', build, function (done) {
+  return cp.spawn(jekyll, ['build'], {stdio: 'inherit'})
+    .on('close', done);
+});
 
 /**
  * Default task, running just `gulp` will minify the images, compile the sass, js, and jekyll site,
