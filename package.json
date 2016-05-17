@@ -1,14 +1,18 @@
 {
   "name": "frasco",
-  "version": "0.3.0",
-  "description": "Jekyll starter project for Gulp with Bourbon/Neat/Bitters, etc.",
+  "version": "0.4.0",
+  "description": "Jekyll starter project including full setup for Gulp, Sass, Autoprefixer, Bourbon/Neat/Bitters, Browserify, Imagemin, Browsersync, etc.",
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp",
+    "start-production": "gulp --production",
     "browserify": "gulp browserify",
+    "build": "gulp build",
+    "build-production": "gulp build --production",
     "imagemin": "gulp imagemin",
     "sass": "gulp sass",
     "server": "gulp server",
+    "server-production": "gulp server --production",
     "test": "gulp test",
     "watch": "gulp watch"
   },
@@ -47,6 +51,7 @@
     "imagemin-pngquant": "^5.0.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.7.0"
+    "watchify": "^3.7.0",
+    "yargs": "^4.7.0"
   }
 }
