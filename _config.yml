@@ -6,7 +6,7 @@ baseurl: /
 exclude:
   - node_modules
   - gulpfile.js
-  - gulpconfig.json
+  - frascoconfig.json
   - package.json
   - npm-debug.log
   - README.md

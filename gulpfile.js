@@ -20,7 +20,7 @@ var watch        = require('gulp-watch');
 var cp           = require('child_process');
 
 // Load configurations set variables
-var config = require('./gulpconfig.json');
+var config = require('./frascoconfig.json');
 var tasks = [];
 var paths = {};
 var jsSrc = [];
@@ -177,7 +177,7 @@ gulp.task('build', ['sass', 'browserify', 'imagemin', 'jekyll-build']);
 
 /**
  * Default task, running just `gulp` will minify the images, compile the sass, js, and jekyll site,
- * launch BrowserSync, and watch files. Tasks can be configured by gulpconfig.json.
+ * launch BrowserSync, and watch files. Tasks can be configured by frascoconfig.json.
  */
 gulp.task('default', tasks);
 

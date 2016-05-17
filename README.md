@@ -79,7 +79,7 @@ gulp.task("deploy", ["jekyll-build"], function () {
 
 ## Configurations and Defaults
 
-You can change the configurations by editing `gulpconfig.json`
+You can change the configurations by editing `frascoconfig.json`
 
 ### port
 
