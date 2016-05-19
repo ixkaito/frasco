@@ -75,7 +75,7 @@ options: integer
 
 ### tasks
 
-Tasks to run when you exec `gulp` command.
+Tasks to run when you exec `npm start` or `gulp` commands.
 
 #### browserify
 
@@ -175,7 +175,7 @@ default: `"_js"`
 options: string  
 example: `"src/js`"
 
-#### imageSrc
+#### imagesSrc
 
 The directory of image source files to compress.
 
