@@ -26,10 +26,12 @@
     "Sass",
     "Autoprefixer",
     "Bourbon",
+    "Neat",
+    "Bitters",
     "Browserify",
     "Watchify",
     "Imagemin",
-    "Browser-sync"
+    "Browsersync"
   ],
   "author": "Kite",
   "license": "MIT",
@@ -38,11 +40,11 @@
   },
   "homepage": "https://github.com/ixkaito/frasco",
   "devDependencies": {
-    "browser-sync": "^2.12.5",
+    "browser-sync": "^2.12.8",
     "browserify": "^13.0.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
-    "gulp-imagemin": "^3.0.0",
+    "gulp-imagemin": "^3.0.1",
     "gulp-newer": "^1.1.0",
     "gulp-plumber": "^1.1.0",
     "gulp-sass": "^2.3.1",
@@ -52,6 +54,6 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0",
-    "yargs": "^4.7.0"
+    "yargs": "^4.7.1"
   }
 }
