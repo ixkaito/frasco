@@ -6,7 +6,7 @@
 var gulp         = require('gulp');
 var newer        = require('gulp-newer');
 var plumber      = require('gulp-plumber');
-var browserSync  = require('browser-sync').create();
+var browsersync  = require('browser-sync').create();
 var sass         = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var imagemin     = require('gulp-imagemin');
@@ -86,15 +86,15 @@ gulp.task('jekyll-build', function (done) {
  * Rebuild Jekyll & do page reload
  */
 gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
-  browserSync.notify('Rebuilded Jekyll');
-  browserSync.reload();
+  browsersync.notify('Rebuilded Jekyll');
+  browsersync.reload();
 });
 
 /**
  * Wait for jekyll-build, then launch the Server
  */
 gulp.task('server', ['jekyll-build'], function() {
-  return browserSync.init({
+  return browsersync.init({
     port: config.port,
     server: {
       baseDir: config.paths.dest,
