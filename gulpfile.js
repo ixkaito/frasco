@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Gulp modules
+ * gulp modules
  */
 var gulp         = require('gulp');
 var newer        = require('gulp-newer');
@@ -114,7 +114,7 @@ gulp.task('sass', function () {
 });
 
 /**
- * Imagemin
+ * imagemin
  */
 gulp.task('imagemin', function () {
   return gulp.src(paths.imagesSrc + '/**/*')

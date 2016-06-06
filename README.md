@@ -1,17 +1,17 @@
 # Frasco [![GitHub release](https://img.shields.io/github/release/ixkaito/frasco.svg)](https://github.com/ixkaito/frasco/releases) [![Build Status](https://travis-ci.org/ixkaito/frasco.svg?branch=master)](https://travis-ci.org/ixkaito/frasco) [![license](https://img.shields.io/github/license/ixkaito/frasco.svg?maxAge=2592000)](https://github.com/ixkaito/frasco/blob/master/LICENSE)
 
-__Jekyll starter project including full setup for Gulp, Sass, Autoprefixer, Bourbon/Neat/Bitters, Browserify, Imagemin, Browsersync, etc.__
+__Jekyll starter project including full setup for gulp, Sass, Autoprefixer, Bourbon/Neat/Bitters, Browserify, imagemin, Browsersync, etc.__
 
 ## Features
 
-- Gulp
+- gulp
 - Sass
 - Autoprefixer
 - Bourbon/Neat/Bitters
 - Browserify
 - Watchify
 - UglifyJS
-- Imagemin
+- imagemin
 - Browsersync
 
 Bourbon is a lightweight Sass framework. If you don't use it, it will do nothing to your CSS file.
@@ -38,7 +38,7 @@ This will give you file watching, browser synchronisation, auto-rebuild, CSS inj
 $ npm start
 ```
 
-Or, if you have installed Gulp globally, this is also available and is same as `npm start`.
+Or, if you have installed gulp globally, this is also available and is same as `npm start`.
 
 ```shell
 $ gulp
@@ -153,7 +153,7 @@ example: `"javascripts"`
 
 #### images
 
-The destination directory of compressed image files for Imagemin.
+The destination directory of compressed image files for imagemin.
 
 default: `"images"`  
 options: string  
