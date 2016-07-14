@@ -66,21 +66,21 @@ As this is just a Jekyll project, you can use any of the commands listed in thei
 
 You can change the configurations by editing `frasco.config.js`
 
-### port
+- ### port
 
-default: `4000`  
-options: integer  
+    default: `4000`  
+    options: integer  
 
-### tasks
+- ### tasks
 
-Tasks to run when you exec `npm start` or `gulp` commands.
+    Tasks to run when you exec `npm start` or `gulp` commands.
 
-#### browserify
+    - #### browserify
 
-To use Browserify.
+        To use Browserify.
 
-default: `true`  
-options: boolean (`true` / `false`)
+        default: `true`  
+        options: boolean (`true` / `false`)
 
 #### imagemin
 
