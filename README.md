@@ -193,24 +193,24 @@ You can change the configurations by editing `frasco.config.js`
 
             The default Jekyll config file(s).
 
-            default: `"_config.yml`
-            options: string (`"FILE1[,FILE2,...]"`)
+            default: `"_config.yml`  
+            options: string (`"FILE1[,FILE2,...]"`)  
             example: `"_config1.yml,_config2.yml`
 
         - ##### development
 
             Development mode config file(s) to override default settings.
 
-            default: `""`
-            options: string (`"FILE1[,FILE2,...]"`)
+            default: `""`  
+            options: string (`"FILE1[,FILE2,...]"`)  
             example: `"_config_development"`
 
         - ##### production
 
             Production mode config file(s) to override default settings.
 
-            default: `""`
-            options: string (`"FILE1[,FILE2,...]"`)
+            default: `""`  
+            options: string (`"FILE1[,FILE2,...]"`)  
             example: `"_config_production"`
 
 - ### sass
@@ -233,7 +233,7 @@ You can change the configurations by editing `frasco.config.js`
         List of browsers, which are supported in your theme.
 
         default: `["> 1%", "last 2 versions", "Firefox ESR"]`  
-        options: array. See [Browserslist docs](https://github.com/ai/browserslist#queries) for available queries.
+        options: array. See [Browserslist docs](https://github.com/ai/browserslist#queries) for available queries.  
         example: `["> 5%", "last 2 versions", "IE 8"]`
 
 - ### js
