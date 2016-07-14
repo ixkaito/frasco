@@ -41,9 +41,8 @@ module.exports = {
   },
 
   js: {
-    src: [
+    entry: [
       "main.js",
     ],
-    dist: "main.js",
   },
 }

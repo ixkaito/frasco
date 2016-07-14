@@ -16,6 +16,7 @@ var cp           = require('child_process');
 var argv         = require('yargs').argv;
 var webpack      = require('webpack-stream');
 var uglify       = require('gulp-uglify');
+var named        = require('vinyl-named');
 
 var jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 
@@ -24,7 +25,7 @@ var config = require('./frasco.config.js');
 var tasks  = [];
 var build  = [];
 var paths  = {};
-var jsSrc  = [];
+var entry  = [];
 
 /**
  * Set default & build tasks
@@ -54,8 +55,8 @@ Object.keys(config.paths).forEach(function (key) {
   }
 });
 
-for (var i = 0; i <= config.js.src.length - 1; i++) {
-  jsSrc.push(paths.jsSrc + '/' + config.js.src[i]);
+for (var i = 0; i <= config.js.entry.length - 1; i++) {
+  entry.push(paths.jsSrc + '/' + config.js.entry[i]);
 }
 
 /**
@@ -124,12 +125,10 @@ gulp.task('imagemin', function () {
  * Bundle JavaScript files
  */
 gulp.task('webpack', function () {
-  return gulp.src(jsSrc)
+  return gulp.src(entry)
+    .pipe(named())
     .pipe(webpack({
       watch: argv.watch ? true : false,
-      output: {
-        filename: config.js.dist,
-      },
     }))
     .pipe(uglify())
     .pipe(gulp.dest(paths.js));
@@ -142,7 +141,7 @@ gulp.task('_webpack', function () {
 });
 
 /**
- * Build for production
+ * Build
  */
 gulp.task('build', build, function (done) {
   var jekyllConfig = config.jekyll.config.default;
