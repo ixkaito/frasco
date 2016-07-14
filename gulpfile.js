@@ -11,14 +11,11 @@ var sass         = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var imagemin     = require('gulp-imagemin');
 var pngquant     = require('imagemin-pngquant');
-var browserify   = require('browserify');
-var watchify     = require('watchify');
-var source       = require('vinyl-source-stream');
-var buffer       = require('vinyl-buffer');
-var uglify       = require('gulp-uglify');
 var watch        = require('gulp-watch');
 var cp           = require('child_process');
 var argv         = require('yargs').argv;
+var webpack      = require('webpack-stream');
+var uglify       = require('gulp-uglify');
 
 var jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 
@@ -30,23 +27,17 @@ var paths  = {};
 var jsSrc  = [];
 
 /**
- * All tasks
+ * Set default & build tasks
  */
 Object.keys(config.tasks).forEach(function (key) {
   if (config.tasks[key]) {
-    tasks.push(key);
+    tasks.push(key == 'webpack' ? '_' + key : key);
   }
 });
 
-/**
- * Build tasks
- */
-build = tasks.concat();
-var index;
-['server', 'watch'].forEach(function (value) {
-  index = build.indexOf(value);
-  if (index > -1) {
-    build.splice(index, 1);
+Object.keys(config.tasks).forEach(function (key) {
+  if (config.tasks[key] && key != 'server') {
+    build.push(key);
   }
 });
 
@@ -107,8 +98,7 @@ gulp.task('server', ['jekyll-build'], function() {
  */
 gulp.task('sass', function () {
   return gulp.src(paths.sass + '/**/*')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(sass({outputStyle: config.sass.outputStyle}))
+    .pipe(sass({outputStyle: config.sass.outputStyle}).on('error', sass.logError))
     .pipe(autoprefixer({ browsers: config.autoprefixer.browsers }))
     .pipe(gulp.dest(paths.css));
 });
@@ -129,30 +119,48 @@ gulp.task('imagemin', function () {
 });
 
 /**
- * Browserify and Watchify
+ * Webpack
+ *
+ * Bundle JavaScript files
  */
-var b = browserify(jsSrc);
-
-function bundle() {
-  return b.bundle()
-    .pipe(source(config.js.dist))
-    .pipe(buffer())
+gulp.task('webpack', function () {
+  return gulp.src(jsSrc)
+    .pipe(webpack({
+      watch: argv.watch ? true : false,
+      output: {
+        filename: config.js.dist,
+      },
+    }))
     .pipe(uglify())
     .pipe(gulp.dest(paths.js));
-}
+});
 
-gulp.task('browserify', bundle);
-
-gulp.task('watchify', function () {
-  b = watchify(b);
-  b.on('update', bundle);
+// For internal use only
+gulp.task('_webpack', function () {
+  argv.watch = true;
+  gulp.start('webpack');
 });
 
 /**
- * Watch scss files for changes & recompile
- * Watch html/md files, run jekyll & reload BrowserSync
+ * Build for production
  */
-gulp.task('watch', ['watchify'], function () {
+gulp.task('build', build, function (done) {
+  var jekyllConfig = config.jekyll.config.default;
+  if (argv.production) {
+    process.env.JEKYLL_ENV = 'production';
+    jekyllConfig += config.jekyll.config.production ? ',' + config.jekyll.config.production : '';
+  } else {
+    jekyllConfig += config.jekyll.config.development ? ',' + config.jekyll.config.development : '';
+  }
+  return cp.spawn(jekyll, ['build', '--config', jekyllConfig], {stdio: 'inherit', env: process.env})
+    .on('close', done);
+});
+
+/**
+ * Default task, running just `gulp` will minify the images, compile the sass, js, and jekyll site,
+ * launch BrowserSync, and watch files. Tasks can be configured by frascoconfig.json.
+ */
+gulp.task('default', tasks, function () {
   if (config.tasks.imagemin) {
     watch(paths.imagesSrc + '/**/*', function () {
       gulp.start('imagemin');
@@ -184,27 +192,6 @@ gulp.task('watch', ['watchify'], function () {
     });
   }
 });
-
-/**
- * Build for production
- */
-gulp.task('build', build, function (done) {
-  var jekyllConfig = config.jekyll.config.default;
-  if (argv.production) {
-    process.env.JEKYLL_ENV = 'production';
-    jekyllConfig += config.jekyll.config.production ? ',' + config.jekyll.config.production : '';
-  } else {
-    jekyllConfig += config.jekyll.config.development ? ',' + config.jekyll.config.development : '';
-  }
-  return cp.spawn(jekyll, ['build', '--config', jekyllConfig], {stdio: 'inherit', env: process.env})
-    .on('close', done);
-});
-
-/**
- * Default task, running just `gulp` will minify the images, compile the sass, js, and jekyll site,
- * launch BrowserSync, and watch files. Tasks can be configured by frascoconfig.json.
- */
-gulp.task('default', tasks);
 
 /**
  * Test

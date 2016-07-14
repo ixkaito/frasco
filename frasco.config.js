@@ -2,11 +2,10 @@ module.exports = {
   port: 4000,
 
   tasks: {
-    browserify: true,
     imagemin:   true,
     sass:       true,
     server:     true,
-    watch:      true,
+    webpack:    true,
   },
 
   paths: {
