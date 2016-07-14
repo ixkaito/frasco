@@ -45,6 +45,7 @@
     "gulp-newer": "^1.2.0",
     "gulp-plumber": "^1.1.0",
     "gulp-sass": "^2.3.1",
+    "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.4",
     "gulp-watch": "^4.3.6",
     "imagemin-pngquant": "^5.0.0",

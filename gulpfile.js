@@ -16,6 +16,7 @@ var cp           = require('child_process');
 var argv         = require('yargs').argv;
 var webpack      = require('webpack-stream');
 var uglify       = require('gulp-uglify');
+var sourcemaps   = require('gulp-sourcemaps');
 
 var jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 
@@ -98,8 +99,10 @@ gulp.task('server', ['jekyll-build'], function() {
  */
 gulp.task('sass', function () {
   return gulp.src(paths.sass + '/**/*')
+    .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(sass({outputStyle: config.sass.outputStyle}).on('error', sass.logError))
     .pipe(autoprefixer({ browsers: config.autoprefixer.browsers }))
+    .pipe(sourcemaps.write('../maps'))
     .pipe(gulp.dest(paths.css));
 });
 
