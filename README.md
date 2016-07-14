@@ -66,7 +66,7 @@ As this is just a Jekyll project, you can use any of the commands listed in thei
 
 ## Configurations and Defaults
 
-You can change the configurations by editing `frascoconfig.json`
+You can change the configurations by editing `frasco.config.js`
 
 ### port
 
