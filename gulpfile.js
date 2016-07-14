@@ -23,7 +23,7 @@ var argv         = require('yargs').argv;
 var jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 
 // Load configurations & set variables
-var config = require('./frascoconfig.json');
+var config = require('./frasco.config.js');
 var tasks  = [];
 var build  = [];
 var paths  = {};
