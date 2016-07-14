@@ -107,8 +107,7 @@ gulp.task('server', ['jekyll-build'], function() {
  */
 gulp.task('sass', function () {
   return gulp.src(paths.sass + '/**/*')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(sass({outputStyle: config.sass.outputStyle}))
+    .pipe(sass({outputStyle: config.sass.outputStyle}).on('error', sass.logError))
     .pipe(autoprefixer({ browsers: config.autoprefixer.browsers }))
     .pipe(gulp.dest(paths.css));
 });
