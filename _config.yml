@@ -7,10 +7,10 @@ baseurl: '/frasco' # the subpath of your site, e.g. /blog
 # Build settings
 markdown: kramdown
 exclude:
-  - node_modules
+  - frasco.config.js
   - gulpfile.js
-  - frascoconfig.json
-  - package.json
-  - npm-debug.log
-  - README.md
   - LICENSE
+  - node_modules
+  - npm-debug.log
+  - package.json
+  - README.md
