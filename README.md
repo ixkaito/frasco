@@ -1,6 +1,6 @@
 # Frasco [![GitHub release](https://img.shields.io/github/release/ixkaito/frasco.svg)](https://github.com/ixkaito/frasco/releases) [![Build Status](https://travis-ci.org/ixkaito/frasco.svg?branch=master)](https://travis-ci.org/ixkaito/frasco) [![license](https://img.shields.io/github/license/ixkaito/frasco.svg?maxAge=2592000)](https://github.com/ixkaito/frasco/blob/master/LICENSE)
 
-__Jekyll starter project including full setup for gulp, Sass, Autoprefixer, Bourbon/Neat/Bitters, Browserify, imagemin, Browsersync, etc.__
+__Jekyll starter project including full setup for gulp, Sass, Autoprefixer, Bourbon/Neat/Bitters, Webpack, imagemin, Browsersync, etc.__
 
 ## Features
 
@@ -8,8 +8,7 @@ __Jekyll starter project including full setup for gulp, Sass, Autoprefixer, Bour
 - [Sass](http://sass-lang.com/)
 - [Autoprefixer](https://github.com/postcss/autoprefixer)
 - [Bourbon](http://bourbon.io/)/[Neat](http://neat.bourbon.io/)/[Bitters](http://bitters.bourbon.io/)
-- [Browserify](http://browserify.org/)
-- [Watchify](https://github.com/substack/watchify)
+- [Webpack](https://webpack.github.io/)
 - [UglifyJS](https://github.com/mishoo/UglifyJS2)
 - [imagemin](https://github.com/imagemin/imagemin)
 - [Browsersync](https://www.browsersync.io/)
@@ -44,7 +43,7 @@ $ gulp
 
 #### Build for Production
 
-This will set the `JEKYLL_ENV` to `production` and use the production config file(s) set in `gulpconfig.json` to override default settings.
+This will set the `JEKYLL_ENV` to `production` and use the production config file(s) set in `frasco.config.js` to override default settings.
 
 ```shell
 $ npm run build-production
@@ -75,13 +74,6 @@ You can change the configurations by editing `frasco.config.js`
 
     Tasks to run when you exec `npm start` or `gulp` commands.
 
-    - #### browserify
-
-        To use Browserify.
-
-        default: `true`  
-        options: boolean (`true` / `false`)
-
     - #### imagemin
 
         To minify images.
@@ -103,9 +95,12 @@ You can change the configurations by editing `frasco.config.js`
         default: `true`  
         options: boolean (`true` / `false`)
 
-    - #### watch
+    - #### webpack
 
-        To watch files and run tasks on file changes.
+        To bundle JavaScript files.
+
+        default: `true`  
+        options: boolean (`true` / `false`)
 
 - ### paths
 
@@ -240,21 +235,13 @@ You can change the configurations by editing `frasco.config.js`
 
     JavaScript settings.
 
-    - #### src
+    - #### entry
 
-        File name(s) of JavaScript source file(s).
+        File name(s) of JavaScript entry points.
 
         default: `["main.js"]`  
         options: array  
         example: `["pluginA.js", "pluginB.js", "main.js"]`
-
-    - #### dist
-
-        The distribution JavaScript file name.
-
-        default: `"main.js"`  
-        options: string  
-        example: `"script.js"`
 
 ## Copyright / License
 
