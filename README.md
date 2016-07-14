@@ -4,17 +4,15 @@ __Jekyll starter project including full setup for gulp, Sass, Autoprefixer, Bour
 
 ## Features
 
-- gulp
-- Sass
-- Autoprefixer
-- Bourbon/Neat/Bitters
-- Browserify
-- Watchify
-- UglifyJS
-- imagemin
-- Browsersync
-
-Bourbon is a lightweight Sass framework. If you don't use it, it will do nothing to your CSS file.
+- [gulp](http://gulpjs.com/)
+- [Sass](http://sass-lang.com/)
+- [Autoprefixer](https://github.com/postcss/autoprefixer)
+- [Bourbon](http://bourbon.io/)/[Neat](http://neat.bourbon.io/)/[Bitters](http://bitters.bourbon.io/)
+- [Browserify](http://browserify.org/)
+- [Watchify](https://github.com/substack/watchify)
+- [UglifyJS](https://github.com/mishoo/UglifyJS2)
+- [imagemin](https://github.com/imagemin/imagemin)
+- [Browsersync](https://www.browsersync.io/)
 
 ## System Preparation
 
