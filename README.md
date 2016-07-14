@@ -82,179 +82,179 @@ You can change the configurations by editing `frasco.config.js`
         default: `true`  
         options: boolean (`true` / `false`)
 
-#### imagemin
+    - #### imagemin
 
-To minify images.
+        To minify images.
 
-default: `true`  
-options: boolean (`true` / `false`)
+        default: `true`  
+        options: boolean (`true` / `false`)
 
-#### sass
+    - #### sass
 
-To compile Sass.
+        To compile Sass.
 
-default: `true`  
-options: boolean (`true` / `false`)
+        default: `true`  
+        options: boolean (`true` / `false`)
 
-#### server
+    - #### server
 
-To compile sources via Jekyll and to keep browsers in sync with file changes via Browsersync.
+        To compile sources via Jekyll and to keep browsers in sync with file changes via Browsersync.
 
-default: `true`  
-options: boolean (`true` / `false`)
+        default: `true`  
+        options: boolean (`true` / `false`)
 
-#### watch
+    - #### watch
 
-To watch files and run tasks on file changes.
+        To watch files and run tasks on file changes.
 
-### paths
+- ### paths
 
-Settings about paths.
+    Settings about paths.
 
-#### dest
+    - #### dest
 
-The destination directory for the whole project.
+        The destination directory for the whole project.
 
-default: `"_site"`  
-options: string
+        default: `"_site"`  
+        options: string
 
-#### posts
+    - #### posts
 
-The directory of posts source files.
+        The directory of posts source files.
 
-default: `"_posts"`  
-options: string
+        default: `"_posts"`  
+        options: string
 
-#### assets
+    - #### assets
 
-The directory to gather all assets.
+        The directory to gather all assets.
 
-default: `"./assets"`  
-options: string  
-example: `"./"` (directly under the theme direcotry)
+        default: `"./assets"`  
+        options: string  
+        example: `"./"` (directly under the theme direcotry)
 
-#### css
+    - #### css
 
-The CSS destination directory for Sass.
+        The CSS destination directory for Sass.
 
-default: `"css"`  
-options: string  
-example: `"stylesheets"`
+        default: `"css"`  
+        options: string  
+        example: `"stylesheets"`
 
-#### js
+    - #### js
 
-The JavaScript destination directory for Browserify.
+        The JavaScript destination directory for Browserify.
 
-default: `"js"`  
-options: string  
-example: `"javascripts"`
+        default: `"js"`  
+        options: string  
+        example: `"javascripts"`
 
-#### images
+    - #### images
 
-The destination directory of compressed image files for imagemin.
+        The destination directory of compressed image files for imagemin.
 
-default: `"images"`  
-options: string  
-example: `"img"`
+        default: `"images"`  
+        options: string  
+        example: `"img"`
 
-#### sass
+    - #### sass
 
-The directory of Sass files.
+        The directory of Sass files.
 
-default: `"_sass"`  
-options: string  
-example: `"src/sass"`
+        default: `"_sass"`  
+        options: string  
+        example: `"src/sass"`
 
-#### jsSrc
+    - #### jsSrc
 
-The directory of JavaScript source files to bundle up by Browserify.
+        The directory of JavaScript source files to bundle up by Browserify.
 
-default: `"_js"`  
-options: string  
-example: `"src/js`"
+        default: `"_js"`  
+        options: string  
+        example: `"src/js`"
 
-#### imagesSrc
+    - #### imagesSrc
 
-The directory of image source files to compress.
+        The directory of image source files to compress.
 
-default: `"_images"`  
-options: string  
-example: `"src/images"`
+        default: `"_images"`  
+        options: string  
+        example: `"src/images"`
 
-### jekyll
+- ### jekyll
 
-Jekyll settings.
+    Jekyll settings.
 
-#### config
+    - #### config
 
-Jekyll config files.
+        Jekyll config files.
 
-##### default
+        - ##### default
 
-The default Jekyll config file(s).
+            The default Jekyll config file(s).
 
-default: `"_config.yml`
-options: string (`"FILE1[,FILE2,...]"`)
-example: `"_config1.yml,_config2.yml`
+            default: `"_config.yml`
+            options: string (`"FILE1[,FILE2,...]"`)
+            example: `"_config1.yml,_config2.yml`
 
-##### development
+        - ##### development
 
-Development mode config file(s) to override default settings.
+            Development mode config file(s) to override default settings.
 
-default: `""`
-options: string (`"FILE1[,FILE2,...]"`)
-example: `"_config_development"`
+            default: `""`
+            options: string (`"FILE1[,FILE2,...]"`)
+            example: `"_config_development"`
 
-##### production
+        - ##### production
 
-Production mode config file(s) to override default settings.
+            Production mode config file(s) to override default settings.
 
-default: `""`
-options: string (`"FILE1[,FILE2,...]"`)
-example: `"_config_production"`
+            default: `""`
+            options: string (`"FILE1[,FILE2,...]"`)
+            example: `"_config_production"`
 
-### sass
+- ### sass
 
-Sass settings.
+    Sass settings.
 
-#### outputStyle
+    - #### outputStyle
 
-The output style of Sass.
+        The output style of Sass.
 
-default: `"compressed"`  
-options: `"expanded"`, `"nested"`, `"compact"`, `"compressed"`
+        default: `"compressed"`  
+        options: `"expanded"`, `"nested"`, `"compact"`, `"compressed"`
 
-### autoprefixer
+- ### autoprefixer
 
-Autoprefixer settings.
+    Autoprefixer settings.
 
-#### browsers
+    - #### browsers
 
-List of browsers, which are supported in your theme.
+        List of browsers, which are supported in your theme.
 
-default: `["> 1%", "last 2 versions", "Firefox ESR"]`  
-options: array. See [Browserslist docs](https://github.com/ai/browserslist#queries) for available queries.
-example: `["> 5%", "last 2 versions", "IE 8"]`
+        default: `["> 1%", "last 2 versions", "Firefox ESR"]`  
+        options: array. See [Browserslist docs](https://github.com/ai/browserslist#queries) for available queries.
+        example: `["> 5%", "last 2 versions", "IE 8"]`
 
-### js
+- ### js
 
-JavaScript settings.
+    JavaScript settings.
 
-#### src
+    - #### src
 
-File name(s) of JavaScript source file(s).
+        File name(s) of JavaScript source file(s).
 
-default: `["main.js"]`  
-options: array  
-example: `["pluginA.js", "pluginB.js", "main.js"]`
+        default: `["main.js"]`  
+        options: array  
+        example: `["pluginA.js", "pluginB.js", "main.js"]`
 
-#### dist
+    - #### dist
 
-The distribution JavaScript file name.
+        The distribution JavaScript file name.
 
-default: `"main.js"`  
-options: string  
-example: `"script.js"`
+        default: `"main.js"`  
+        options: string  
+        example: `"script.js"`
 
 ## Copyright / License
 
