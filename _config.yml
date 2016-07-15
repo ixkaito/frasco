@@ -1,0 +1,16 @@
+# Site settings
+title: My New Frasco Site
+description: Jekyll starter project including full setup for gulp, Sass, Autoprefixer, Bourbon/Neat/Bitters, Browserify, imagemin, Browsersync, etc.
+url: http://ixkaito.github.io # the base hostname & protocol for your site
+baseurl: '/frasco' # the subpath of your site, e.g. /blog
+
+# Build settings
+markdown: kramdown
+exclude:
+  - frasco.config.js
+  - gulpfile.js
+  - LICENSE
+  - node_modules
+  - npm-debug.log
+  - package.json
+  - README.md
