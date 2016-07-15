@@ -43,6 +43,25 @@ pre {
 		text-align: center;
 		text-shadow: 0 1px 5px rgba(#000, .75);
 	}
+
+	.badges {
+		margin-top: 20px;
+		text-align: center;
+
+		.fb_iframe_widget span {
+			vertical-align: top !important;
+		}
+
+		.twitter-share-button,
+		.twitter-follow-button {
+			vertical-align: top;
+		}
+
+		> li {
+			display: inline-block;
+
+		}
+	}
 }
 
 .quick-start {
@@ -62,4 +81,13 @@ pre {
 	}
 }
 
+.docs {
+	@include outer-container;
+	padding-top: 120px;
 
+	h1 {
+		font-size: 48px;
+		font-family: $open-sans;
+		font-weight: 300;
+	}
+}
