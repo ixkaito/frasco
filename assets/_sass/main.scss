@@ -14,8 +14,16 @@ body {
 	letter-spacing: 0.05em;
 }
 
+a {
+	color: $brand-color;
+	text-decoration: underline;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
 pre {
-	font-family: $inconsolata;
 	line-height: 1;
 	padding: 1em;
 
@@ -24,6 +32,20 @@ pre {
 		color: #fff;
 		line-height: 1.5;
 	}
+}
+
+code {
+	background: #e6e9ed;
+	border-radius: 2px;
+	display: inline-block;
+	font-family: $inconsolata;
+	padding: 0 .3em;
+	line-height: 1.5;
+}
+
+.highlight {
+	background: #000;
+	border-radius: 4px;
 }
 
 .hero {
@@ -71,7 +93,7 @@ pre {
 	box-shadow: 0 1px 5px rgba(#000, .75);
 	margin: 40px auto;
 	overflow: hidden;
-	width: 480px;
+	width: 600px;
 
 	.quick-start-header {
 		background: #ddd;
@@ -83,11 +105,17 @@ pre {
 
 .docs {
 	@include outer-container;
+	color: #333;
 	padding-top: 120px;
 
 	h1 {
-		font-size: 48px;
-		font-family: $open-sans;
+		font-size: 60px;
 		font-weight: 300;
+	}
+
+	h2 {
+		font-size: 48px;
+		font-weight: 300;
+		margin-top: 1em;
 	}
 }
