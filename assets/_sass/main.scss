@@ -93,7 +93,7 @@ code {
 	box-shadow: 0 1px 5px rgba(#000, .75);
 	margin: 40px auto;
 	overflow: hidden;
-	width: 600px;
+	width: 480px;
 
 	.quick-start-header {
 		background: #ddd;
@@ -117,5 +117,27 @@ code {
 		font-size: 48px;
 		font-weight: 300;
 		margin-top: 1em;
+	}
+
+	h3 {
+		font-size: 36px;
+		font-weight: 300;
+		margin-top: 1em;
+	}
+
+	h4 {
+		font-size: 28px;
+		font-weight: 300;
+		margin-top: 1em;
+	}
+
+	p {
+		margin: 1em 0;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		+ h1, + h2, + h3, + h4, + h5, + h6, + p {
+			margin-top: 0;
+		}
 	}
 }
