@@ -126,6 +126,7 @@ gulp.task('imagemin', function () {
  */
 gulp.task('webpack', function () {
   return gulp.src(entry)
+    .pipe(plumber())
     .pipe(named())
     .pipe(webpack({
       watch: argv.watch ? true : false,
