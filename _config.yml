@@ -16,9 +16,9 @@ exclude:
   - README.md
 
 compress_html:
-  clippings: all
+  # clippings: all
   comments: all
-  endings: all
+  # endings: all
   ignore:
     envs: [development]
   # blanklines: true
