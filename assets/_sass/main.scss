@@ -67,7 +67,7 @@ code {
 	}
 
 	.badges {
-		margin-top: 20px;
+		margin-top: 30px;
 		text-align: center;
 
 		.fb_iframe_widget span {
@@ -91,7 +91,6 @@ code {
 	color: #ddd;
 	font-size: 14px;
 	font-weight: 300;
-	margin-top: 100px;
 	padding: 1em;
 	text-align: center;
 }
@@ -113,10 +112,14 @@ code {
 	}
 }
 
+.main {
+	box-shadow: 0 0 15px rgba(#000, 1);
+	padding: 120px 20px;
+}
+
 .docs {
 	@include outer-container;
 	color: #333;
-	padding-top: 120px;
 
 	h1 {
 		font-size: 60px;
@@ -142,7 +145,7 @@ code {
 	}
 
 	p {
-		margin: 1em 0;
+		margin: .75em 0;
 	}
 
 	h1, h2, h3, h4, h5, h6 {

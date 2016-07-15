@@ -6,17 +6,34 @@ layout: index
 
 To use this starter project, you'll need the following things installed on your machine.
 
-1. [Jekyll](http://jekyllrb.com/) - `$ gem install jekyll`
-2. [NodeJS](http://nodejs.org) - use the installer, Homebrew, etc.
+1. [__Jekyll__](http://jekyllrb.com/)
+
+   ```shell
+   $ gem install jekyll
+   ```
+
+2. [__NodeJS__](http://nodejs.org)
+
+   use the installer, Homebrew, etc.
 
 ## Local Installation
 
 1. Clone this repo, or download it into a directory of your choice.
+
+   ```shell
+   $ git clone https://github.com/ixkaito/frasco.git
+   ```
+
 2. Inside the directory, run `npm install`.
+
+   ```shell
+   $ cd frasco
+   $ npm install
+   ```
 
 ## Usage
 
-### Development Mode
+### Start to Developt
 
 This will give you file watching, browser synchronisation, auto-rebuild, CSS injecting, etc.
 
@@ -24,21 +41,15 @@ This will give you file watching, browser synchronisation, auto-rebuild, CSS inj
 $ npm start
 ```
 
-Or, if you have installed gulp globally, this is also available and is same as `npm start`.
-
-```shell
-$ gulp
-```
-
-#### Build for Production
+### Build for Production
 
 This will set the `JEKYLL_ENV` to `production` and use the production config file(s) set in `frasco.config.js` to override default settings.
 
 ```shell
-$ npm run build-production
+$ npm run build
 ```
 
-#### To See More Commands
+### See More Commands
 
 This will display all available commands.
 
@@ -50,9 +61,20 @@ $ npm run
 
 As this is just a Jekyll project, you can use any of the commands listed in their [docs](http://jekyllrb.com/docs/usage/)
 
+## What's in Frasco
+
+- [gulp](http://gulpjs.com/)
+- [Sass](http://sass-lang.com/)
+- [Autoprefixer](https://github.com/postcss/autoprefixer)
+- [Bourbon](http://bourbon.io/)/[Neat](http://neat.bourbon.io/)/[Bitters](http://bitters.bourbon.io/)
+- [Webpack](https://webpack.github.io/)
+- [UglifyJS](https://github.com/mishoo/UglifyJS2)
+- [imagemin](https://github.com/imagemin/imagemin)
+- [Browsersync](https://www.browsersync.io/)
+
 ## Configurations and Defaults
 
-You can change the configurations by editing `frasco.config.js`
+You can change the configurations by editing `frasco.config.js`.
 
 - ### port
 
