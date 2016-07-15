@@ -6,8 +6,7 @@
   "scripts": {
     "start": "gulp",
     "test": "gulp test",
-    "build": "gulp build",
-    "build-production": "gulp build --production",
+    "build": "gulp build --production",
     "imagemin": "gulp imagemin",
     "production": "gulp --production",
     "sass": "gulp sass",
