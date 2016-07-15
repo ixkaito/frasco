@@ -3,20 +3,20 @@
 /**
  * gulp modules
  */
+var argv         = require('yargs').argv;
+var autoprefixer = require('gulp-autoprefixer');
+var browsersync  = require('browser-sync').create();
+var cp           = require('child_process');
 var gulp         = require('gulp');
+var imagemin     = require('gulp-imagemin');
+var named        = require('vinyl-named');
 var newer        = require('gulp-newer');
 var plumber      = require('gulp-plumber');
-var browsersync  = require('browser-sync').create();
-var sass         = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
-var imagemin     = require('gulp-imagemin');
 var pngquant     = require('imagemin-pngquant');
-var watch        = require('gulp-watch');
-var cp           = require('child_process');
-var argv         = require('yargs').argv;
-var webpack      = require('webpack-stream');
+var sass         = require('gulp-sass');
 var uglify       = require('gulp-uglify');
-var named        = require('vinyl-named');
+var watch        = require('gulp-watch');
+var webpack      = require('webpack-stream');
 
 var jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 
