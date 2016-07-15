@@ -23,7 +23,7 @@ compress_html:
     envs: [development]
   # blanklines: true
   # profile: true
-  startings: [html, head, body]
+  # startings: [html, head, body]
 
 twitter:
   id: ixkaito
