@@ -86,6 +86,16 @@ code {
 	}
 }
 
+.footer {
+	background: #222;
+	color: #ddd;
+	font-size: 14px;
+	font-weight: 300;
+	margin-top: 100px;
+	padding: 1em;
+	text-align: center;
+}
+
 .quick-start {
 	@include position(absolute, auto 0 auto 0);
 	background: #000;
@@ -136,6 +146,8 @@ code {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
+		color: #000;
+
 		+ h1, + h2, + h3, + h4, + h5, + h6, + p {
 			margin-top: 0;
 		}
