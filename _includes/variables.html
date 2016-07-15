@@ -1,0 +1,5 @@
+{% assign homeurl = '/' | prepend: site.baseurl %}
+
+{% if page.url == homeurl %}
+	{% assign is_home = true %}
+{% endif %}

@@ -14,3 +14,16 @@ exclude:
   - npm-debug.log
   - package.json
   - README.md
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  ignore:
+    envs: [development]
+  # blanklines: true
+  # profile: true
+  startings: [html, head, body]
+
+twitter:
+  id: ixkaito

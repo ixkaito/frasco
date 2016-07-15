@@ -8,6 +8,19 @@
 <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="{% if is_home %}website{% else %}article{% endif %}">
+<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+<meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:image" content="{% if page.ogp_image %}{{ page.ogp_image | prepend: site.baseurl | prepend: site.url }}{% elsif page.thumbnail %}{{ page.thumbnail | prepend: site.baseurl | prepend: site.url }}{% else %}{{ '/assets/images/ogp.png' | prepend: site.baseurl | prepend: site.url }}{% endif %}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@{{ site.twitter.id }}">
+<meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+<meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+<meta name="twitter:image" content="{% if page.ogp_image %}{{ page.ogp_image | prepend: site.baseurl | prepend: site.url }}{% elsif page.thumbnail %}{{ page.thumbnail | prepend: site.baseurl | prepend: site.url }}{% else %}{{ '/assets/images/ogp.png' | prepend: site.baseurl | prepend: site.url }}{% endif %}">
+
 <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600|Inconsolata' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
 <link rel="canonical" href="{{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}">
