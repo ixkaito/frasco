@@ -8,7 +8,10 @@
 @import "monokai-custom";
 
 body {
+	background: $light-gray;
+	font-family: $open-sans;
 	line-height: 1.75;
+	letter-spacing: 0.05em;
 }
 
 pre {
@@ -24,7 +27,8 @@ pre {
 }
 
 .hero {
-	background: #333;
+	// background: linear-gradient(141deg, #333 0%, #222 71%, #111 100%);
+	background: radial-gradient(#333, #222) repeat scroll 0 0;
 	color: #ddd;
 	padding: 80px 20px 120px;
 
@@ -35,7 +39,7 @@ pre {
 
 	.copy {
 		margin: auto;
-		max-width: 320px;
+		max-width: 330px;
 		text-align: center;
 		text-shadow: 0 1px 5px rgba(#000, .75);
 	}
