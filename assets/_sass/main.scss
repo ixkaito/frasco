@@ -2,3 +2,57 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
 // @import "base/base";
+@import "reset";
+@import "monokai";
+@import "monokai-custom";
+
+body {
+	line-height: 1.75;
+}
+
+pre {
+	line-height: 1;
+	padding: 1em;
+
+	code {
+		background: #000;
+		color: #fff;
+		line-height: 1.5;
+	}
+}
+
+.hero {
+	background: #333;
+	color: #ddd;
+	padding: 80px 20px 150px;
+
+	.logo {
+		padding: 20px;
+		text-align: center;
+	}
+
+	.copy {
+		margin: auto;
+		max-width: 320px;
+		text-align: center;
+		text-shadow: 0 1px 5px rgba(#000, .75);
+	}
+}
+
+.quick-start {
+	@include position(absolute, auto 0 auto 0);
+	background: #000;
+	border-radius: 4px;
+	box-shadow: 0 1px 5px rgba(#000, .75);
+	margin: 40px auto;
+	overflow: hidden;
+	width: 480px;
+
+	.quick-start-header {
+		background: #ddd;
+		color: #333;
+		text-align: center;
+	}
+}
+
+
