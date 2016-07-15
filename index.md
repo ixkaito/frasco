@@ -14,7 +14,7 @@ layout: default
 
 	<div class="quick-start">
 		<div class="quick-start-header">
-			<h2>Quick Start</h2>
+			<h2>Quick-start Instructions</h2>
 		</div>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone https://github.com/ixkaito/frasco.git

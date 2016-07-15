@@ -2,6 +2,7 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
 // @import "base/base";
+@import "variables";
 @import "reset";
 @import "monokai";
 @import "monokai-custom";
@@ -11,6 +12,7 @@ body {
 }
 
 pre {
+	font-family: $inconsolata;
 	line-height: 1;
 	padding: 1em;
 
@@ -24,7 +26,7 @@ pre {
 .hero {
 	background: #333;
 	color: #ddd;
-	padding: 80px 20px 150px;
+	padding: 80px 20px 120px;
 
 	.logo {
 		padding: 20px;
@@ -50,8 +52,9 @@ pre {
 
 	.quick-start-header {
 		background: #ddd;
-		color: #333;
+		color: #444;
 		text-align: center;
+		text-shadow: 0 1px 0 #fff;
 	}
 }
 
