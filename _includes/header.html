@@ -15,6 +15,7 @@
 <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
 <meta property="og:site_name" content="{{ site.title }}">
 <meta property="og:image" content="{% if page.ogp_image %}{{ page.ogp_image | prepend: site.baseurl | prepend: site.url }}{% elsif page.thumbnail %}{{ page.thumbnail | prepend: site.baseurl | prepend: site.url }}{% else %}{{ '/assets/images/ogp.png' | prepend: site.baseurl | prepend: site.url }}{% endif %}">
+<meta property="fb:admins" content="{{ site.facebook.admin }}" />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@{{ site.twitter.id }}">
 <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
