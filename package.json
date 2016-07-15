@@ -18,17 +18,16 @@
     "url": "https://github.com/ixkaito/frasco.git"
   },
   "keywords": [
-    "gulp",
-    "Jekyll",
-    "Sass",
     "Autoprefixer",
-    "Bourbon",
-    "Neat",
     "Bitters",
-    "Browserify",
-    "Watchify",
+    "Bourbon",
+    "Browsersync",
+    "gulp",
     "imagemin",
-    "Browsersync"
+    "Jekyll",
+    "Neat",
+    "Sass",
+    "Webpack"
   ],
   "author": "Kite",
   "license": "MIT",
