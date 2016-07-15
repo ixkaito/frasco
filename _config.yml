@@ -1,6 +1,6 @@
 # Site settings
-title: My New Frasco Site
-description: Jekyll starter project including full setup for gulp, Sass, Autoprefixer, Bourbon/Neat/Bitters, Browserify, imagemin, Browsersync, etc.
+title: 'Frasco: Jekyll Starter Project'
+description: Quick starter project for Jekyll including full setup for gulp, Sass, Autoprefixer, Bourbon/Neat/Bitters, Webpack, Imagemin, Browsersync, etc.
 url: http://ixkaito.github.io # the base hostname & protocol for your site
 baseurl: '/frasco' # the subpath of your site, e.g. /blog
 
