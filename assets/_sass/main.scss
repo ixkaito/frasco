@@ -52,7 +52,7 @@ code {
 br.desktop {
 	display: none;
 
-	@include media(640) {
+	@include media(640px) {
 		display: block;
 	}
 }
