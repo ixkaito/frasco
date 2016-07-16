@@ -14,6 +14,11 @@ body {
 	letter-spacing: 0.05em;
 }
 
+img {
+	max-width: 100%;
+	height: auto;
+}
+
 a {
 	color: $brand-color;
 	text-decoration: underline;
@@ -25,6 +30,7 @@ a {
 
 pre {
 	line-height: 1;
+	overflow-y: auto;
 	padding: 1em;
 
 	code {
@@ -43,13 +49,21 @@ code {
 	line-height: 1.5;
 }
 
+br.desktop {
+	display: none;
+
+	@include media(640px) {
+		display: block;
+	}
+}
+
 .highlight {
 	background: #000;
 	border-radius: 4px;
 }
 
 .hero {
-	// background: linear-gradient(141deg, #333 0%, #222 71%, #111 100%);
+	background: url(../images/noise.png), radial-gradient(#333, #222) repeat scroll 0 0;
 	background: radial-gradient(#333, #222) repeat scroll 0 0;
 	color: #ddd;
 	padding: 80px 20px 120px;
@@ -67,7 +81,9 @@ code {
 	}
 
 	.badges {
+		margin: 0;
 		margin-top: 30px;
+		padding: 0 20px;
 		text-align: center;
 
 		.fb_iframe_widget span {
@@ -100,9 +116,14 @@ code {
 	background: #000;
 	border-radius: 4px;
 	box-shadow: 0 1px 5px rgba(#000, .75);
-	margin: 40px auto;
+	margin: 40px 20px;
 	overflow: hidden;
-	width: 480px;
+	max-width: 480px;
+
+	@include media(520px) {
+		margin-left: auto;
+		margin-right: auto;
+	}
 
 	.quick-start-header {
 		background: #ddd;
@@ -114,33 +135,58 @@ code {
 
 .main {
 	box-shadow: 0 0 15px rgba(#000, 1);
-	padding: 120px 20px;
+	padding: 120px 0;
 }
 
 .docs {
 	@include outer-container;
 	color: #333;
+	overflow-y: auto;
+	padding: 0 20px;
 
 	h1 {
-		font-size: 60px;
+		font-size: 48px;
 		font-weight: 300;
+		line-height: 1.25;
+
+		@include media(480px) {
+			font-size: 60px;
+		}
 	}
 
 	h2 {
-		font-size: 48px;
+		font-size: 40px;
 		font-weight: 300;
+		line-height: 1.25;
 		margin-top: 1em;
+
+		@include media(480px) {
+			font-size: 48px;
+		}
 	}
 
 	h3 {
-		font-size: 36px;
+		font-size: 32px;
 		font-weight: 300;
 		margin-top: 1em;
+
+		@include media(480px) {
+			font-size: 36px;
+		}
 	}
 
 	h4 {
-		font-size: 28px;
+		font-size: 24px;
 		font-weight: 300;
+		margin-top: 1em;
+
+		@include media(480px) {
+			font-size: 28px;
+		}
+	}
+
+	h5 {
+		font-size: 20px;
 		margin-top: 1em;
 	}
 
