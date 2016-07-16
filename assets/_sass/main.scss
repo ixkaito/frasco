@@ -63,9 +63,8 @@ br.desktop {
 }
 
 .hero {
-	// background: linear-gradient(141deg, #333 0%, #222 71%, #111 100%);
-	// background-image: url(../images/noise.png);
 	background: url(../images/noise.png), radial-gradient(#333, #222) repeat scroll 0 0;
+	background: radial-gradient(#333, #222) repeat scroll 0 0;
 	color: #ddd;
 	padding: 80px 20px 120px;
 
@@ -146,11 +145,13 @@ br.desktop {
 	h1 {
 		font-size: 60px;
 		font-weight: 300;
+		line-height: 1.25;
 	}
 
 	h2 {
 		font-size: 48px;
 		font-weight: 300;
+		line-height: 1.25;
 		margin-top: 1em;
 	}
 
