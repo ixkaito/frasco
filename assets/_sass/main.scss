@@ -50,7 +50,8 @@ code {
 
 .hero {
 	// background: linear-gradient(141deg, #333 0%, #222 71%, #111 100%);
-	background: radial-gradient(#333, #222) repeat scroll 0 0;
+	// background-image: url(../images/noise.png);
+	background: url(../images/noise.png), radial-gradient(#333, #222) repeat scroll 0 0;
 	color: #ddd;
 	padding: 80px 20px 120px;
 
