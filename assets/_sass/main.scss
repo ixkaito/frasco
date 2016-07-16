@@ -14,6 +14,11 @@ body {
 	letter-spacing: 0.05em;
 }
 
+img {
+	max-width: 100%;
+	height: auto;
+}
+
 a {
 	color: $brand-color;
 	text-decoration: underline;
@@ -25,6 +30,7 @@ a {
 
 pre {
 	line-height: 1;
+	overflow-y: scroll;
 	padding: 1em;
 
 	code {
@@ -41,6 +47,14 @@ code {
 	font-family: $inconsolata;
 	padding: 0 .3em;
 	line-height: 1.5;
+}
+
+br.desktop {
+	display: none;
+
+	@include media(640) {
+		display: block;
+	}
 }
 
 .highlight {
@@ -68,7 +82,9 @@ code {
 	}
 
 	.badges {
+		margin: 0;
 		margin-top: 30px;
+		padding: 0 20px;
 		text-align: center;
 
 		.fb_iframe_widget span {
@@ -101,9 +117,14 @@ code {
 	background: #000;
 	border-radius: 4px;
 	box-shadow: 0 1px 5px rgba(#000, .75);
-	margin: 40px auto;
+	margin: 40px 20px;
 	overflow: hidden;
-	width: 480px;
+	max-width: 480px;
+
+	@include media(520px) {
+		margin-left: auto;
+		margin-right: auto;
+	}
 
 	.quick-start-header {
 		background: #ddd;
