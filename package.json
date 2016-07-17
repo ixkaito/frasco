@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/ixkaito/frasco/issues"
   },
-  "homepage": "https://github.com/ixkaito/frasco",
+  "homepage": "https://ixkaito.github.io/frasco",
   "devDependencies": {
     "browser-sync": "^2.12.12",
     "gulp": "^3.9.1",
