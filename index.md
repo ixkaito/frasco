@@ -199,9 +199,9 @@ You can change the configurations by editing `frasco.config.js`.
 
             The default Jekyll config file(s).
 
-            default: `"_config.yml`  
+            default: `"_config.yml"`  
             options: string (`"FILE1[,FILE2,...]"`)  
-            example: `"_config1.yml,_config2.yml`
+            example: `"_config1.yml,_config2.yml"`
 
         - ##### development
 
