@@ -4,7 +4,7 @@
  * gulp modules
  */
 var argv         = require('yargs').argv;
-var autoprefixer = require('gulp-autoprefixer');
+var autoprefixer = require('autoprefixer');
 var browsersync  = require('browser-sync').create();
 var cp           = require('child_process');
 var gulp         = require('gulp');
@@ -13,6 +13,7 @@ var named        = require('vinyl-named');
 var newer        = require('gulp-newer');
 var plumber      = require('gulp-plumber');
 var pngquant     = require('imagemin-pngquant');
+var postcss      = require('gulp-postcss');
 var sass         = require('gulp-sass');
 var uglify       = require('gulp-uglify');
 var watch        = require('gulp-watch');
@@ -100,7 +101,11 @@ gulp.task('server', ['jekyll-build'], function() {
 gulp.task('sass', function () {
   return gulp.src(paths.sass + '/**/*')
     .pipe(sass({outputStyle: config.sass.outputStyle}).on('error', sass.logError))
-    .pipe(autoprefixer({ browsers: config.autoprefixer.browsers }))
+    .pipe(postcss([
+      autoprefixer({
+        browsers: config.autoprefixer.browsers
+      })
+    ]))
     .pipe(gulp.dest(paths.css));
 });
 
