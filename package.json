@@ -1,7 +1,7 @@
 {
   "name": "frasco",
   "version": "0.5.3",
-  "description": "Jekyll starter project including full setup for gulp, Sass, Autoprefixer, Bourbon/Neat/Bitters, Browserify, imagemin, Browsersync, etc.",
+  "description": "Jekyll starter project including full setup for gulp, Sass, Autoprefixer, Bourbon/Neat/Bitters, Browserify, imagemin, Browsersync, PostCSS etc.",
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp",
@@ -26,6 +26,7 @@
     "imagemin",
     "Jekyll",
     "Neat",
+    "PostCSS",
     "Sass",
     "Webpack"
   ],
@@ -36,18 +37,19 @@
   },
   "homepage": "https://ixkaito.github.io/frasco",
   "devDependencies": {
+    "autoprefixer": "^6.5.1",
     "browser-sync": "^2.13.0",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
     "gulp-imagemin": "^3.0.1",
     "gulp-newer": "^1.2.0",
     "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.2.0",
     "gulp-sass": "^2.3.2",
-    "gulp-uglify": "^1.5.4",
+    "gulp-uglify": "^2.0.0",
     "gulp-watch": "^4.3.8",
     "imagemin-pngquant": "^5.0.0",
     "vinyl-named": "^1.1.0",
     "webpack-stream": "^3.2.0",
-    "yargs": "^4.8.1"
+    "yargs": "^6.2.0"
   }
 }
