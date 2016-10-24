@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: "Frasco: Jekyll Starter Project"
 email: your-email@domain.com
-description: Quick starter project for Jekyll including full setup for gulp, Sass, Autoprefixer, Bourbon/Neat/Bitters, Webpack, Imagemin, Browsersync, etc.
+description: Quick starter project for Jekyll including full setup for gulp, Sass, Autoprefixer, Bourbon/Neat/Bitters, Browserify, imagemin, Browsersync, PostCSS etc.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ixkaito
