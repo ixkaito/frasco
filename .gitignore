@@ -21,6 +21,7 @@ wp-config.php
 
 # Jekyll
 _site
+.jekyll-metadata
 
 # Node.js
 node_modules/
