@@ -6,13 +6,13 @@ layout: index
 
 To use this starter project, you'll need the following things installed on your machine.
 
-1. [__Jekyll__](http://jekyllrb.com/)
+1. [__Jekyll__](https://jekyllrb.com/) & [__Bundler__](https://bundler.io/)
 
    ```shell
-   $ gem install jekyll
+   $ gem install jekyll bundler
    ```
 
-2. [__NodeJS__](http://nodejs.org)
+2. [__NodeJS__](https://nodejs.org)
 
    use the installer, Homebrew, etc.
 
@@ -59,13 +59,14 @@ $ npm run
 
 ### Jekyll
 
-As this is just a Jekyll project, you can use any of the commands listed in their [docs](http://jekyllrb.com/docs/usage/)
+As this is just a Jekyll project, you can use any of the commands listed in their [docs](https://jekyllrb.com/docs/usage/)
 
 ## What's in Frasco
 
 - [gulp](http://gulpjs.com/)
 - [Sass](http://sass-lang.com/)
 - [Autoprefixer](https://github.com/postcss/autoprefixer)
+- [PostCSS](http://postcss.org/)
 - [Bourbon](http://bourbon.io/)/[Neat](http://neat.bourbon.io/)/[Bitters](http://bitters.bourbon.io/)
 - [Webpack](https://webpack.github.io/)
 - [UglifyJS](https://github.com/mishoo/UglifyJS2)
