@@ -1,9 +1,10 @@
 {
   "name": "frasco",
-  "version": "0.5.6",
+  "version": "0.6.0",
   "description": "Jekyll starter project including full setup for gulp, Sass, Autoprefixer, Bourbon/Neat/Bitters, Browserify, imagemin, Browsersync, PostCSS etc.",
   "main": "gulpfile.js",
   "scripts": {
+    "preinstall": "bundle install",
     "start": "gulp",
     "test": "gulp test",
     "build": "gulp build --production",
@@ -39,7 +40,9 @@
   "devDependencies": {
     "autoprefixer": "^6.5.1",
     "browser-sync": "^2.13.0",
+    "eslint-config-google": "^0.7.0",
     "gulp": "^3.9.1",
+    "gulp-eslint": "^3.0.1",
     "gulp-imagemin": "^3.0.1",
     "gulp-newer": "^1.2.0",
     "gulp-plumber": "^1.1.0",
