@@ -7,6 +7,7 @@ var argv         = require('yargs').argv;
 var autoprefixer = require('autoprefixer');
 var browsersync  = require('browser-sync').create();
 var cp           = require('child_process');
+var eslint       = require('gulp-eslint');
 var gulp         = require('gulp');
 var imagemin     = require('gulp-imagemin');
 var named        = require('vinyl-named');
@@ -124,12 +125,19 @@ gulp.task('imagemin', function () {
     .pipe(gulp.dest(paths.images));
 });
 
+gulp.task('eslint', function() {
+  return gulp.src(entry)
+  .pipe(eslint())
+  .pipe(eslint.format())
+  .pipe(eslint.failOnError());
+});
+
 /**
  * Webpack
  *
  * Bundle JavaScript files
  */
-gulp.task('webpack', function () {
+gulp.task('webpack', ['eslint'], function () {
   return gulp.src(entry)
     .pipe(plumber())
     .pipe(named())
