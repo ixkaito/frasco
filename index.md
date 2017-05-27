@@ -33,6 +33,14 @@ To use this starter project, you'll need the following things installed on your 
 
 ## Usage
 
+**Note:** If you have trouble with the commands, prepending `bundle exec` to your commands may solve it.
+
+**e.g.**
+
+```shell
+$ bundle exec npm start
+```
+
 ### Start to Developt
 
 This will give you file watching, browser synchronisation, auto-rebuild, CSS injecting, etc.
