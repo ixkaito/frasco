@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - '6'
+  - '8'
 
 branches:
   only:
@@ -12,7 +12,7 @@ env:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 
 before_install:
-  - rvm install 2.2.2
+  - rvm install 2.4.1
 
 install:
   - npm install
