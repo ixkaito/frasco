@@ -125,6 +125,9 @@ gulp.task('imagemin', function () {
     .pipe(gulp.dest(paths.images));
 });
 
+/**
+ * eslint
+ */
 gulp.task('eslint', function() {
   return gulp.src(entry)
   .pipe(eslint())
