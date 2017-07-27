@@ -13,11 +13,11 @@ env:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 
 before_install:
-  - rvm install 2.2.2
+  - rvm install 2.4.1
 
 install:
   - npm install
-  - gem install jekyll html-proofer
+  - gem install html-proofer
 
 script:
   - jekyll build
