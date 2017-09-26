@@ -70,7 +70,7 @@ As this is just a Jekyll project, you can use any of the commands listed in thei
 
 ## What's in Frasco
 
-- [gulp](http://gulpjs.com/)
+- [gulp](https://gulpjs.com/)
 - [Sass](http://sass-lang.com/)
 - [Autoprefixer](https://github.com/postcss/autoprefixer)
 - [PostCSS](http://postcss.org/)
