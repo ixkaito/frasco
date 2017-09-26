@@ -40,7 +40,7 @@ To use this starter project, you'll need the following things installed on your 
 $ bundle exec npm start
 ```
 
-### Start to Developt
+### Start to Develop
 
 This will give you file watching, browser synchronisation, auto-rebuild, CSS injecting, etc.
 
