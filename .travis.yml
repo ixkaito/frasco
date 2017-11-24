@@ -22,6 +22,6 @@ install:
 script:
   - jekyll build
   - npm test
-  - htmlproofer ./_site
+  - htmlproofer --url-ignore "/talk.jekyllrb.com/" ./_site
 
 sudo: false
