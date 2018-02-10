@@ -20,6 +20,20 @@ module.exports = {
     imagesSrc: "_images",
   },
 
+  browsersync: {
+    browsers: [
+      // "Google Chrome Canary",
+      "Google Chrome",
+      // "Firefox Nightly",
+      // "Firefox Developer Edition",
+      // "Firefox",
+      // "Safari Technology Preview",
+      // "Safari",
+      // "Opera",
+      // "Opera Developer",
+    ],
+  },
+  
   jekyll: {
     config: {
       default:     "_config.yml",
