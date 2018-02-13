@@ -4,17 +4,17 @@
   "description": "Jekyll starter project including full setup for gulp, Webpack, Sass, Autoprefixer, Bourbon/Neat/Bitters, imagemin, Browsersync, PostCSS etc.",
   "main": "gulpfile.js",
   "scripts": {
-    "preinstall": "bundle install",
-    "start": "gulp",
-    "test": "gulp test",
-    "browsersync": "gulp browsersync",
-    "browsersync-production": "gulp browsersync --production",
-    "build": "gulp build --production",
-    "eslint": "gulp eslint",
-    "imagemin": "gulp imagemin",
-    "production": "gulp --production",
-    "sass": "gulp sass",
-    "watch": "gulp watch"
+    "preinstall": "bundle install --path vendor/bundle",
+    "start": "bundle exec gulp",
+    "test": "bundle exec gulp test",
+    "browsersync": "bundle exec gulp browsersync",
+    "browsersync-production": "bundle exec gulp browsersync --production",
+    "build": "bundle exec gulp build --production",
+    "eslint": "bundle exec gulp eslint",
+    "imagemin": "bundle exec gulp imagemin",
+    "production": "bundle exec gulp --production",
+    "sass": "bundle exec gulp sass",
+    "watch": "bundle exec gulp watch"
   },
   "repository": {
     "type": "git",
