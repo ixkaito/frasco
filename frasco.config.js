@@ -6,7 +6,6 @@ module.exports = {
     eslint:      true,
     imagemin:    true,
     sass:        true,
-    // server:     true,
     watch:       true,
     webpack:     true,
   },

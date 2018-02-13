@@ -64,38 +64,38 @@ for (var i = 0; i <= config.js.entry.length - 1; i++) {
 /**
  * Build the Jekyll Site
  */
-gulp.task('jekyll-build', function (done) {
-  var jekyllConfig = config.jekyll.config.default;
-  if (argv.production) {
-    process.env.JEKYLL_ENV = 'production';
-    jekyllConfig += config.jekyll.config.production ? ',' + config.jekyll.config.production : '';
-  } else {
-    jekyllConfig += config.jekyll.config.development ? ',' + config.jekyll.config.development : '';
-  }
-  return cp.spawn(jekyll, ['build', '--config', jekyllConfig], {stdio: 'inherit', env: process.env})
-    .on('close', done);
-});
+// gulp.task('jekyll-build', function (done) {
+//   var jekyllConfig = config.jekyll.config.default;
+//   if (argv.production) {
+//     process.env.JEKYLL_ENV = 'production';
+//     jekyllConfig += config.jekyll.config.production ? ',' + config.jekyll.config.production : '';
+//   } else {
+//     jekyllConfig += config.jekyll.config.development ? ',' + config.jekyll.config.development : '';
+//   }
+//   return cp.spawn(jekyll, ['build', '--config', jekyllConfig], {stdio: 'inherit', env: process.env})
+//     .on('close', done);
+// });
 
 /**
  * Rebuild Jekyll & do page reload
  */
-gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
-  browsersync.notify('Rebuilded Jekyll');
-  browsersync.reload();
-});
+// gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
+//   browsersync.notify('Rebuilded Jekyll');
+//   browsersync.reload();
+// });
 
 /**
  * Wait for jekyll-build, then launch the Server
  */
-gulp.task('server', ['jekyll-build'], function() {
-  return browsersync.init({
-    port: config.port,
-    browser: config.browsersync.browsers,
-    server: {
-      baseDir: config.paths.dest,
-    }
-  });
-});
+// gulp.task('server', ['jekyll-build'], function() {
+//   return browsersync.init({
+//     port: config.port,
+//     browser: config.browsersync.browsers,
+//     server: {
+//       baseDir: config.paths.dest,
+//     }
+//   });
+// });
 
 /**
  * Sass
