@@ -30,7 +30,7 @@ gulp.task('watch', function () {
       config.assets + '/' + config.js.dest + '/**/*',
       config.assets + '/' + config.imagemin.dest + '/**/*'
     ], function () {
-      gulp.start('jekyll-rebuild');
+      gulp.start('browser-reload');
     });
   }
 });

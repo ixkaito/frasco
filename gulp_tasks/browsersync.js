@@ -20,7 +20,7 @@ gulp.task('browsersync', ['jekyll-build'], function () {
 /**
  * Rebuild Jekyll & do page reload
  */
-gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
+gulp.task('browser-reload', ['jekyll-build'], function () {
   browsersync.notify('Rebuilded Jekyll');
   browsersync.reload();
 });
