@@ -15,7 +15,7 @@ module.exports = {
   browsersync: {
     browsers: [
       // "Google Chrome Canary",
-      "Google Chrome",
+      // "Google Chrome",
       // "Firefox Nightly",
       // "Firefox Developer Edition",
       // "Firefox",
