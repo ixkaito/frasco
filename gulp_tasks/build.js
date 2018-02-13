@@ -3,9 +3,10 @@ const browsersync = require('browser-sync').create();
 const config      = require('../frasco.config.js');
 const cp          = require('child_process');
 const gulp        = require('gulp');
-const jekyll      = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 
-const build = [];
+let jekyll        = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
+
+let build = [];
 Object.keys(config.tasks).forEach(function (key) {
   if (config.tasks[key] && key != 'browsersync' && key != 'watch') {
     build.push(key);
@@ -17,7 +18,7 @@ build.push('jekyll-build');
  * Build the Jekyll Site
  */
 gulp.task('jekyll-build', function (done) {
-  const jekyllConfig = config.jekyll.config.default;
+  let jekyllConfig = config.jekyll.config.default;
   if (argv.production) {
     process.env.JEKYLL_ENV = 'production';
     jekyllConfig += config.jekyll.config.production ? ',' + config.jekyll.config.production : '';
