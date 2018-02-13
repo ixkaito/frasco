@@ -141,22 +141,22 @@ gulp.task('eslint', function() {
  *
  * Bundle JavaScript files
  */
-gulp.task('webpack', ['eslint'], function () {
-  return gulp.src(entry)
-    .pipe(plumber())
-    .pipe(named())
-    .pipe(webpack({
-      watch: argv.watch ? true : false,
-    }))
-    .pipe(uglify())
-    .pipe(gulp.dest(paths.js));
-});
+// gulp.task('webpack', ['eslint'], function () {
+//   return gulp.src(entry)
+//     .pipe(plumber())
+//     .pipe(named())
+//     .pipe(webpack({
+//       watch: argv.watch ? true : false,
+//     }))
+//     .pipe(uglify())
+//     .pipe(gulp.dest(paths.js));
+// });
 
 // For internal use only
-gulp.task('_webpack', function () {
-  argv.watch = true;
-  gulp.start('webpack');
-});
+// gulp.task('_webpack', function () {
+//   argv.watch = true;
+//   gulp.start('webpack');
+// });
 
 /**
  * Build
