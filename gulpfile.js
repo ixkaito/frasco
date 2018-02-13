@@ -100,41 +100,41 @@ gulp.task('server', ['jekyll-build'], function() {
 /**
  * Sass
  */
-gulp.task('sass', function () {
-  return gulp.src(paths.sass + '/**/*')
-    .pipe(sass({outputStyle: config.sass.outputStyle}).on('error', sass.logError))
-    .pipe(postcss([
-      autoprefixer({
-        browsers: config.autoprefixer.browsers
-      })
-    ]))
-    .pipe(gulp.dest(paths.css));
-});
+// gulp.task('sass', function () {
+//   return gulp.src(paths.sass + '/**/*')
+//     .pipe(sass({outputStyle: config.sass.outputStyle}).on('error', sass.logError))
+//     .pipe(postcss([
+//       autoprefixer({
+//         browsers: config.autoprefixer.browsers
+//       })
+//     ]))
+//     .pipe(gulp.dest(paths.css));
+// });
 
 /**
  * imagemin
  */
-gulp.task('imagemin', function () {
-  return gulp.src(paths.imagesSrc + '/**/*')
-    .pipe(plumber())
-    .pipe(newer(paths.images))
-    .pipe(imagemin({
-      progressive: true,
-      svgoPlugins: [{removeViewBox: false}],
-      use: [pngquant()]
-    }))
-    .pipe(gulp.dest(paths.images));
-});
+// gulp.task('imagemin', function () {
+//   return gulp.src(paths.imagesSrc + '/**/*')
+//     .pipe(plumber())
+//     .pipe(newer(paths.images))
+//     .pipe(imagemin({
+//       progressive: true,
+//       svgoPlugins: [{removeViewBox: false}],
+//       use: [pngquant()]
+//     }))
+//     .pipe(gulp.dest(paths.images));
+// });
 
 /**
  * eslint
  */
-gulp.task('eslint', function() {
-  return gulp.src(entry)
-  .pipe(eslint())
-  .pipe(eslint.format())
-  .pipe(eslint.failOnError());
-});
+// gulp.task('eslint', function() {
+//   return gulp.src(entry)
+//   .pipe(eslint())
+//   .pipe(eslint.format())
+//   .pipe(eslint.failOnError());
+// });
 
 /**
  * Webpack
