@@ -47,12 +47,12 @@ Object.keys(config.tasks).forEach(function (key) {
 /**
  * Paths
  */
-Object.keys(config.paths).forEach(function (key) {
-  if (key != 'assets') {
+Object.keys(config.paths).forEach((key) => {
+  if (key !== 'assets' || key !== 'dest') {
     if (config.paths.assets === '') {
-      paths[key] = './' + config.paths[key];
+      paths[key] = `./${config.paths[key]}`;
     } else {
-      paths[key] = config.paths.assets + '/' + config.paths[key];
+      paths[key] = `${config.paths.assets}/${config.paths[key]}`;
     }
   }
 });
