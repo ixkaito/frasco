@@ -7,12 +7,14 @@
     "preinstall": "bundle install",
     "start": "gulp",
     "test": "gulp test",
+    "browsersync": "gulp browsersync",
+    "browsersync-production": "gulp browsersync --production",
     "build": "gulp build --production",
+    "eslint": "gulp eslint",
     "imagemin": "gulp imagemin",
     "production": "gulp --production",
     "sass": "gulp sass",
-    "server": "gulp server",
-    "server-production": "gulp server --production"
+    "watch": "gulp watch"
   },
   "repository": {
     "type": "git",
@@ -52,6 +54,7 @@
     "gulp-watch": "^4.3.11",
     "imagemin-pngquant": "^5.0.1",
     "vinyl-named": "^1.1.0",
+    "webpack": "^3.4.1",
     "webpack-stream": "^3.2.0",
     "yargs": "^8.0.2"
   }
