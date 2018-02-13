@@ -1,7 +1,3 @@
-# Apache
-.htaccess
-.htpasswd
-
 # Sass
 .sass-cache
 *.scssc
@@ -9,19 +5,11 @@
 # Sublime Text
 sftp-config.json
 
-# WordPress
-wp-config.php
-*.sql
-
-# Ruby on Rails
-/.bundle
-/db/*.sqlite3
-/db/*.sqlite3-journal
-/public/uploads
-
 # Jekyll
 _site
 .jekyll-metadata
+/.bundle
+/vendor
 
 # Node.js
 node_modules/
