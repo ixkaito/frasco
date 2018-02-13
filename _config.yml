@@ -1,8 +1,8 @@
-# Welcome to Frasco!
+# Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your whole blog, values
 # which you are expected to set up once and rarely edit after that. If you find
-# yourself editing these this file very often, consider using Jekyll's data files
+# yourself editing this file very often, consider using Jekyll's data files
 # feature for the data you need to update frequently.
 #
 # For technical reasons, this file is *NOT* reloaded automatically when you use
@@ -15,7 +15,8 @@
 # in the templates via {{ site.myvariable }}.
 title: "Frasco: Jekyll Starter Project"
 email: your-email@domain.com
-description: Quick starter project for Jekyll including full setup for gulp, Sass, Autoprefixer, Bourbon/Neat/Bitters, Browserify, imagemin, Browsersync, PostCSS etc.
+description: >- # this means to ignore newlines until "baseurl:"
+  Quick starter project for Jekyll including full setup for gulp, Sass, Autoprefixer, Bourbon/Neat/Bitters, Browserify, imagemin, Browsersync, PostCSS etc.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ixkaito
@@ -23,12 +24,18 @@ github_username:  ixkaito
 
 # Build settings
 markdown: kramdown
+theme: minima
 plugins:
   - jekyll-feed
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
 exclude:
   - Gemfile
   - Gemfile.lock
   - frasco.config.js
+  - gulp_tasks
   - gulpfile.js
   - LICENSE
   - node_modules
@@ -36,3 +43,7 @@ exclude:
   - package.json
   - package-lock.json
   - README.md
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
