@@ -90,6 +90,7 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
 gulp.task('server', ['jekyll-build'], function() {
   return browsersync.init({
     port: config.port,
+    browser: config.browsersync.browsers,
     server: {
       baseDir: config.paths.dest,
     }
