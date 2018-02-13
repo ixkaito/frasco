@@ -3,6 +3,7 @@ const browsersync = require('browser-sync').create();
 const config      = require('../frasco.config.js');
 const cp          = require('child_process');
 const gulp        = require('gulp');
+const jekyll      = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 
 const build = [];
 Object.keys(config.tasks).forEach(function (key) {

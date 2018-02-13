@@ -161,17 +161,17 @@ for (var i = 0; i <= config.js.entry.length - 1; i++) {
 /**
  * Build
  */
-gulp.task('build', build, function (done) {
-  var jekyllConfig = config.jekyll.config.default;
-  if (argv.production) {
-    process.env.JEKYLL_ENV = 'production';
-    jekyllConfig += config.jekyll.config.production ? ',' + config.jekyll.config.production : '';
-  } else {
-    jekyllConfig += config.jekyll.config.development ? ',' + config.jekyll.config.development : '';
-  }
-  return cp.spawn(jekyll, ['build', '--config', jekyllConfig], {stdio: 'inherit', env: process.env})
-    .on('close', done);
-});
+// gulp.task('build', build, function (done) {
+//   var jekyllConfig = config.jekyll.config.default;
+//   if (argv.production) {
+//     process.env.JEKYLL_ENV = 'production';
+//     jekyllConfig += config.jekyll.config.production ? ',' + config.jekyll.config.production : '';
+//   } else {
+//     jekyllConfig += config.jekyll.config.development ? ',' + config.jekyll.config.development : '';
+//   }
+//   return cp.spawn(jekyll, ['build', '--config', jekyllConfig], {stdio: 'inherit', env: process.env})
+//     .on('close', done);
+// });
 
 /**
  * Default task, running just `gulp` will minify the images, compile the sass, js, and jekyll site,
