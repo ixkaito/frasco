@@ -7,13 +7,7 @@ title: 'Frasco: Jekyll Starter Project'
 
 To use this starter project, you'll need the following things installed on your machine.
 
-1. [__Jekyll__](https://jekyllrb.com/) & [__Bundler__](https://bundler.io/)
-
-   ```shell
-   $ gem install jekyll bundler
-   ```
-
-2. [__NodeJS__](https://nodejs.org)
+1. [__NodeJS__](https://nodejs.org)
 
    use the installer, Homebrew, etc.
 
@@ -33,12 +27,6 @@ To use this starter project, you'll need the following things installed on your 
    ```
 
 ## Usage
-
-**Note:** If you have trouble with the commands, prepending `bundle exec` to your commands may solve it. e.g.
-
-```shell
-$ bundle exec npm start
-```
 
 ### Start to Develop
 
@@ -74,7 +62,6 @@ As this is just a Jekyll project, you can use any of the commands listed in thei
 - [Sass](http://sass-lang.com/)
 - [Autoprefixer](https://github.com/postcss/autoprefixer)
 - [PostCSS](http://postcss.org/)
-- [Bourbon](http://bourbon.io/)/[Neat](http://neat.bourbon.io/)/[Bitters](http://bitters.bourbon.io/)
 - [Webpack](https://webpack.github.io/)
 - [UglifyJS](https://github.com/mishoo/UglifyJS2)
 - [imagemin](https://github.com/imagemin/imagemin)
@@ -87,11 +74,25 @@ You can change the configurations by editing `frasco.config.js`.
 - ### port
 
     default: `4000`  
-    options: integer  
+    options: integer
 
 - ### tasks
 
     Tasks to run when you exec `npm start` or `gulp` commands.
+
+    - #### browsersync
+
+        To compile sources via Jekyll and to keep browsers in sync with file changes via Browsersync.
+
+        default: `true`  
+        options: boolean (`true` / `false`)
+
+    - #### eslint
+
+        To lint utility for JavaScript and JSX
+
+        default: `true`  
+        options: boolean (`true` / `false`)
 
     - #### imagemin
 
@@ -107,9 +108,9 @@ You can change the configurations by editing `frasco.config.js`.
         default: `true`  
         options: boolean (`true` / `false`)
 
-    - #### server
+    - #### watch
 
-        To compile sources via Jekyll and to keep browsers in sync with file changes via Browsersync.
+        To watch file changes and re-compile sources.
 
         default: `true`  
         options: boolean (`true` / `false`)
@@ -121,79 +122,49 @@ You can change the configurations by editing `frasco.config.js`.
         default: `true`  
         options: boolean (`true` / `false`)
 
-- ### paths
+- ### assets
 
-    Settings about paths.
+    The directory to gather all assets.
 
-    - #### dest
+    default: `"./assets"`  
+    options: string  
+    example: `"./"` (directly under the theme direcotry)
 
-        The destination directory for the whole project.
+- ### browsersync
 
-        default: `"_site"`  
-        options: string
+    Browsersync settings.
 
-    - #### posts
+    - #### browsers
 
-        The directory of posts source files.
+        Browsers to open
 
-        default: `"_posts"`  
-        options: string
+        default: `[]`
+        options: array
+        example: `['Google Chrome', 'Firefox']`
 
-    - #### assets
+- ### eslintLoader
 
-        The directory to gather all assets.
+    Eslint loader (for webpack) settings.
 
-        default: `"./assets"`  
-        options: string  
-        example: `"./"` (directly under the theme direcotry)
+- ### imagemin
 
-    - #### css
+    Imagemin settings.
 
-        The CSS destination directory for Sass.
-
-        default: `"css"`  
-        options: string  
-        example: `"stylesheets"`
-
-    - #### js
-
-        The JavaScript destination directory for Browserify.
-
-        default: `"js"`  
-        options: string  
-        example: `"javascripts"`
-
-    - #### images
-
-        The destination directory of compressed image files for imagemin.
-
-        default: `"images"`  
-        options: string  
-        example: `"img"`
-
-    - #### sass
-
-        The directory of Sass files.
-
-        default: `"_sass"`  
-        options: string  
-        example: `"src/sass"`
-
-    - #### jsSrc
-
-        The directory of JavaScript source files to bundle up by Browserify.
-
-        default: `"_js"`  
-        options: string  
-        example: `"src/js`"
-
-    - #### imagesSrc
+    - #### src
 
         The directory of image source files to compress.
 
         default: `"_images"`  
         options: string  
         example: `"src/images"`
+
+    - #### dest
+
+        The destination directory of compressed image files for imagemin.
+
+        default: `"images"`  
+        options: string  
+        example: `"img"`
 
 - ### jekyll
 
@@ -227,32 +198,51 @@ You can change the configurations by editing `frasco.config.js`.
             options: string (`"FILE1[,FILE2,...]"`)  
             example: `"_config_production"`
 
-- ### sass
+    - #### dest
 
-    Sass settings.
+        The destination directory for the whole project.
 
-    - #### outputStyle
+        default: `"_site"`  
+        options: string
 
-        The output style of Sass.
+    - #### includes
 
-        default: `"compressed"`  
-        options: `"expanded"`, `"nested"`, `"compact"`, `"compressed"`
+        The directory of includes.
 
-- ### autoprefixer
+        default: `"_includes"`  
+        options: string
 
-    Autoprefixer settings.
+    - #### layouts
 
-    - #### browsers
+        The directory of layouts.
 
-        List of browsers, which are supported in your theme.
+        default: `"_layouts"`  
+        options: string
 
-        default: `["> 1%", "last 2 versions", "Firefox ESR"]`  
-        options: array. See [Browserslist docs](https://github.com/ai/browserslist#queries) for available queries.  
-        example: `["> 5%", "last 2 versions", "IE 8"]`
+    - #### posts
+
+        The directory of posts source files.
+
+        default: `"_posts"`  
+        options: string
 
 - ### js
 
-    JavaScript settings.
+    - #### src
+
+        The directory of JavaScript source files to bundle up by Browserify.
+
+        default: `"_js"`  
+        options: string  
+        example: `"src/js`"
+
+    - #### dest
+
+        The JavaScript destination directory for Browserify.
+
+        default: `"js"`  
+        options: string  
+        example: `"javascripts"`
 
     - #### entry
 
@@ -262,3 +252,41 @@ You can change the configurations by editing `frasco.config.js`.
         options: array  
         example: `["pluginA.js", "pluginB.js", "main.js"]`
 
+- ### sass
+
+    Sass settings.
+
+    - #### src
+
+        The directory of Sass files.
+
+        default: `"_sass"`  
+        options: string  
+        example: `"src/sass"`
+
+    - #### dest
+
+        The CSS destination directory for Sass.
+
+        default: `"css"`  
+        options: string  
+        example: `"stylesheets"`
+
+    - #### outputStyle
+
+        The output style of Sass.
+
+        default: `"compressed"`  
+        options: `"expanded"`, `"nested"`, `"compact"`, `"compressed"`
+
+    - #### autoprefixer
+
+        Autoprefixer settings.
+
+        - "#### browsers
+
+            List of browsers, which are supported in your theme.
+
+            default: `["> 1%", "last 2 versions", "Firefox ESR"]`  
+            options: array. See [Browserslist docs](https://github.com/ai/browserslist#queries) for available queries.  
+            example: `["> 5%", "last 2 versions", "IE 8"]`
