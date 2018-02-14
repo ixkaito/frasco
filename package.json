@@ -1,7 +1,7 @@
 {
   "name": "frasco",
   "version": "0.6.1",
-  "description": "Jekyll starter project including full setup for gulp, Webpack, Sass, Autoprefixer, Bourbon/Neat/Bitters, imagemin, Browsersync, PostCSS etc.",
+  "description": "Jekyll starter project including full setup for gulp, Sass, Autoprefixer, PostCSS, webpack, imagemin, Browsersync etc.",
   "main": "gulpfile.js",
   "scripts": {
     "preinstall": "bundle install --path vendor/bundle",
@@ -22,13 +22,10 @@
   },
   "keywords": [
     "Autoprefixer",
-    "Bitters",
-    "Bourbon",
     "Browsersync",
     "gulp",
     "imagemin",
     "Jekyll",
-    "Neat",
     "PostCSS",
     "Sass",
     "Webpack"
