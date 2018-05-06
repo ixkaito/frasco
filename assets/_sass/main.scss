@@ -201,4 +201,26 @@ br.desktop {
 			margin-top: 0;
 		}
 	}
+
+	table {
+		border: 1px solid #ccc;
+		width: 100%;
+	}
+
+	thead {
+		background: #eee;
+		border-bottom: 2px solid #ccc;
+	}
+
+	thead,
+	th {
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+
+	td,
+	th {
+		border: 1px solid #ccc;
+		padding: 0.3em 0.75em 0.4em;
+	}
 }
