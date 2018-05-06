@@ -19,7 +19,7 @@ build.push('jekyll-build');
  */
 gulp.task('jekyll-build', function (done) {
   let jekyllConfig = config.jekyll.config.default;
-  if (argv.production) {
+  if (argv.jekyllEnv == 'production') {
     process.env.JEKYLL_ENV = 'production';
     jekyllConfig += config.jekyll.config.production ? ',' + config.jekyll.config.production : '';
   } else {
