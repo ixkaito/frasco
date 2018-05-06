@@ -12,7 +12,7 @@ env:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 
 before_install:
-  - rvm install 2.4.1
+  - rvm install 2.5.0
 
 install:
   - npm install
