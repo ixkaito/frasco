@@ -1,7 +1,7 @@
 language: node_js
 node_js:
   - '8'
-  - '6'
+  - '10'
 
 branches:
   only:
@@ -13,14 +13,14 @@ env:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 
 before_install:
-  - rvm install 2.4.1
+  - rvm install 2.5.0
 
 install:
   - npm install
   - gem install html-proofer
 
 script:
-  - jekyll build
+  - bundle exec jekyll build
   - npm test
   - htmlproofer --url-ignore "/talk.jekyllrb.com/" ./_site
 

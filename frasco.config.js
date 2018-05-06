@@ -49,7 +49,7 @@ module.exports = {
     dest:     '_site',
     includes: '_inclues',
     layouts:  '_layouts',
-    posts:    'posts',
+    posts:    '_posts',
   },
 
   js: {
