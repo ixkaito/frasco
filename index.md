@@ -248,7 +248,7 @@ You can change the configurations by editing `frasco.config.js`.
 
         File name(s) of JavaScript entry points.
 
-        default: `["main.js"]`  
+        default: `["bundle.js"]`  
         options: array  
         example: `["pluginA.js", "pluginB.js", "main.js"]`
 
@@ -283,10 +283,14 @@ You can change the configurations by editing `frasco.config.js`.
 
         Autoprefixer settings.
 
-        - "#### browsers
+        - #### browsers
 
             List of browsers, which are supported in your theme.
 
             default: `["> 1%", "last 2 versions", "Firefox ESR"]`  
             options: array. See [Browserslist docs](https://github.com/ai/browserslist#queries) for available queries.  
             example: `["> 5%", "last 2 versions", "IE 8"]`
+
+- ### webpack
+
+    Webpack configuration. See [https://webpack.js.org/configuration/](https://webpack.js.org/configuration/).
