@@ -56,7 +56,7 @@ module.exports = {
     src:   '_js',
     dest:  'js',
     entry: [
-      'main.js',
+      'bundle.js',
     ],
   },
 
