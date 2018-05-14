@@ -1,6 +1,6 @@
 {
   "name": "frasco",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "Jekyll starter project including full setup for gulp, Sass, Autoprefixer, PostCSS, webpack, imagemin, Browsersync etc.",
   "main": "gulpfile.js",
   "scripts": {
