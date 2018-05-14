@@ -37,7 +37,7 @@
   },
   "homepage": "https://ixkaito.github.io/frasco",
   "devDependencies": {
-    "autoprefixer": "^8.0.0",
+    "autoprefixer": "^8.5.0",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.23.6",
@@ -56,8 +56,8 @@
     "imagemin-pngquant": "^5.0.1",
     "require-dir": "^1.0.0",
     "vinyl-named": "^1.1.0",
-    "webpack": "^4.7.0",
+    "webpack": "^4.8.3",
     "webpack-stream": "^4.0.1",
-    "yargs": "^11.0.0"
+    "yargs": "^11.1.0"
   }
 }
