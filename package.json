@@ -38,10 +38,13 @@
   "homepage": "https://ixkaito.github.io/frasco",
   "devDependencies": {
     "autoprefixer": "^8.0.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.23.6",
     "eslint-config-google": "^0.9.1",
     "eslint-loader": "^2.0.0",
     "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
     "gulp-eslint": "^4.0.2",
     "gulp-imagemin": "^4.1.0",
     "gulp-newer": "^1.4.0",
