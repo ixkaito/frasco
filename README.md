@@ -8,4 +8,4 @@ https://ixkaito.github.io/frasco/
 
 ## Copyright / License
 
-Copyright © 2018 the contributors of the Frasco project under the [MIT License](https://github.com/ixkaito/frasco/blob/master/LICENSE).
+Copyright © 2015 the contributors of the Frasco project under the [MIT License](https://github.com/ixkaito/frasco/blob/master/LICENSE).
