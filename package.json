@@ -1,6 +1,6 @@
 {
   "name": "frasco",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "description": "Jekyll starter project including full setup for gulp, Sass, Autoprefixer, PostCSS, webpack, imagemin, Browsersync etc.",
   "main": "gulpfile.js",
   "scripts": {
@@ -37,15 +37,15 @@
   },
   "homepage": "https://ixkaito.github.io/frasco",
   "devDependencies": {
-    "autoprefixer": "^8.5.0",
+    "autoprefixer": "^9.0.1",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
-    "browser-sync": "^2.23.6",
+    "browser-sync": "^2.24.6",
     "eslint-config-google": "^0.9.1",
-    "eslint-loader": "^2.0.0",
+    "eslint-loader": "^2.1.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.1",
-    "gulp-eslint": "^4.0.2",
+    "gulp-eslint": "^5.0.0",
     "gulp-imagemin": "^4.1.0",
     "gulp-newer": "^1.4.0",
     "gulp-plumber": "^1.2.0",
@@ -53,11 +53,11 @@
     "gulp-sass": "^4.0.1",
     "gulp-uglify": "^3.0.0",
     "gulp-watch": "^5.0.0",
-    "imagemin-pngquant": "^5.0.1",
+    "imagemin-pngquant": "^6.0.0",
     "require-dir": "^1.0.0",
     "vinyl-named": "^1.1.0",
-    "webpack": "^4.8.3",
-    "webpack-stream": "^4.0.1",
-    "yargs": "^11.1.0"
+    "webpack": "^4.16.1",
+    "webpack-stream": "^5.0.0",
+    "yargs": "^12.0.1"
   }
 }
