@@ -20,6 +20,7 @@ gulp.task('watch', function () {
       '!./node_modules/**/*',
       '!./README.md',
       '!' + config.jekyll.dest + '/**/*',
+      '_config*.yml',
       '*.html',
       './**/*.md',
       './**/*.markdown',
