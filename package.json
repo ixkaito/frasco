@@ -53,6 +53,7 @@
     "gulp-sass": "^4.0.1",
     "gulp-watch": "^5.0.0",
     "imagemin-pngquant": "^6.0.0",
+    "natives": "^1.1.6",
     "require-dir": "^1.0.0",
     "vinyl-named": "^1.1.0",
     "webpack": "^4.16.1",
