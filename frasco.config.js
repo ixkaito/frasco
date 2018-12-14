@@ -2,12 +2,12 @@ module.exports = {
   port: 4000,
 
   tasks: {
-    browsersync: true,
-    eslint:      true,
-    imagemin:    true,
-    sass:        true,
-    watch:       true,
-    webpack:     true,
+    browser:  true,
+    eslint:   true,
+    imagemin: true,
+    sass:     true,
+    watch:    true,
+    webpack:  true,
   },
 
   assets: './assets',

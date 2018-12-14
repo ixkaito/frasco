@@ -1,22 +1,22 @@
 const config        = require('../frasco.config.js');
 const gulp          = require('gulp');
-const watch         = require('gulp-watch');
+const gulpWatch     = require('gulp-watch');
 
-gulp.task('watch', function () {
+function watch() {
   if (config.tasks.imagemin) {
-    watch(config.assets + '/' + config.imagemin.src + '/**/*', function () {
+    gulpWatch(config.assets + '/' + config.imagemin.src + '/**/*', function () {
       gulp.series('imagemin');
     });
   }
 
   if (config.tasks.sass) {
-    watch(config.assets + '/' + config.sass.src + '/**/*', function () {
+    gulpWatch(config.assets + '/' + config.sass.src + '/**/*', function () {
       gulp.series('sass');
     });
   }
 
   if (config.tasks.browsersync) {
-    watch([
+    gulpWatch([
       '!./node_modules/**/*',
       '!./README.md',
       '!' + config.jekyll.dest + '/**/*',
@@ -34,4 +34,4 @@ gulp.task('watch', function () {
       gulp.series('browser-reload');
     });
   }
-});
+}
