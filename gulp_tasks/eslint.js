@@ -2,7 +2,7 @@ const config = require('../frasco.config.js');
 const eslint = require('gulp-eslint');
 const gulp   = require('gulp');
 
-gulp.task('eslint', function() {
+gulp.task('eslint', function () {
   return gulp.src([config.assets + '/' + config.js.src + '/**/*.js', '!node_modules/**'])
     .pipe(eslint())
     .pipe(eslint.format())

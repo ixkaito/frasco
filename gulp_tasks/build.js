@@ -3,6 +3,10 @@ const browsersync = require('browser-sync').create();
 const config      = require('../frasco.config.js');
 const cp          = require('child_process');
 const gulp        = require('gulp');
+const eslint      = require('./eslint.js');
+const imagemin    = require('./imagemin.js');
+const sass        = require('./sass.js');
+const webpack     = require('./webpack.js');
 
 let jekyll        = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 
@@ -33,9 +37,9 @@ gulp.task('jekyll-build', function (done) {
  * Build task, this will minify the images, compile the sass,
  * bundle the js, but not launch BrowserSync and watch files.
  */
-gulp.task('build', build);
+gulp.task('build', gulp.series(gulp.parallel(...build)));
 
 /**
  * Test task, this use the build task.
  */
-gulp.task('test', build);
+gulp.task('test', gulp.series(gulp.parallel(...build)));
