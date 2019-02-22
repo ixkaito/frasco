@@ -47,9 +47,7 @@ module.exports = {
       production:  '',
     },
     dest:     '_site',
-    includes: '_includes',
-    layouts:  '_layouts',
-    posts:    '_posts',
+    data:     '_data',
   },
 
   js: {
