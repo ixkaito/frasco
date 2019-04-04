@@ -1,17 +1,11 @@
-const argv        = require('yargs').argv;
-const browsersync = require('browser-sync').create();
-const config      = require('../frasco.config.js');
-const cp          = require('child_process');
-const gulp        = require('gulp');
+const argv   = require('yargs').argv;
+const config = require('../frasco.config.js');
+const cp     = require('child_process');
+const gulp   = require('gulp');
 
-let jekyll        = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
+const jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 
-let build = [];
-Object.keys(config.tasks).forEach(function (key) {
-  if (config.tasks[key] && key != 'browsersync' && key != 'watch') {
-    build.push(key);
-  }
-});
+const build  = Object.keys(config.tasks).filter((key) => config.tasks[key] && !['browsersync', 'watch'].includes(key))
 build.push('jekyll-build');
 
 /**
