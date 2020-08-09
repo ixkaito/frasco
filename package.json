@@ -9,30 +9,49 @@
   ],
   "config": {
     "browsersync": {
-      "port": 3000
+      "port": 4000
     },
     "image": {
-      "src": "assets/src/images",
+      "src": "assets/_images",
       "dist": "assets/images"
     },
     "js": {
       "entry": "bundle.js",
-      "src": "assets/src/js",
+      "src": "assets/_js",
       "dist": "assets/js"
     },
     "css": {
-      "src": "assets/src/scss",
+      "src": "assets/_sass",
       "dist": "assets/css",
       "style": "compressed",
       "map": "--map"
+    },
+    "jekyll": {
+      "config": {
+        "default": "_config.yml",
+        "development": "_config.dev.yml",
+        "production": "_config.prod.yml"
+      }
     }
   },
   "scripts": {
+    "preinstall": "bundle install",
+    "dev": "npm-run-all -p imagemin sass webpack -s jekyll:development -p browser watch",
+    "browser": "browser-sync \"_site\" -f \"_site\" --port $npm_package_config_browsersync_port",
+    "build": "npm-run-all -p imagemin sass webpack -s jekyll:production",
+    "jekyll": "bundle exec jekyll build",
+    "jekyll:development": "npm run jekyll -- --config $npm_package_config_jekyll_config_default,$npm_package_config_jekyll_config_development",
+    "jekyll:production": "npm run jekyll",
     "imagemin": "node imagemin \"$npm_package_config_image_src/**/*\" $npm_package_config_image_dist",
     "presass": "stylelint \"$npm_package_config_css_src/**/*\" --fix",
     "sass": "sass $npm_package_config_css_src:$npm_package_config_css_dist --style=compressed",
     "postsass": "postcss $npm_package_config_css_dist/*.css --use=autoprefixer --dir=$npm_package_config_css_dist $npm_package_config_css_map",
-    "webpack": "webpack $npm_package_config_js_src/$npm_package_config_js_entry -o $npm_package_config_js_dist/$npm_package_config_js_entry"
+    "webpack": "webpack $npm_package_config_js_src/$npm_package_config_js_entry -o $npm_package_config_js_dist/$npm_package_config_js_entry",
+    "watch:imagemin": "onchange \"$npm_package_config_image_src/**/*\" -e \".DS_Store\" -- npm run imagemin",
+    "watch:jekyll": "npm run jekyll:development -- -w",
+    "watch:sass": "onchange \"$npm_package_config_css_src/**/*\" -e \".DS_Store\" -- npm run sass",
+    "watch:webpack": "npm run webpack -- --watch",
+    "watch": "run-p watch:*"
   },
   "repository": {
     "type": "git",
