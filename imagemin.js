@@ -17,7 +17,8 @@ if (! input) return;
       imageminOptipng(),
       imageminSvgo({
         plugins: [
-          { removeViewBox: false }
+          { removeViewBox: false },
+          { cleanupIDs: false },
         ]
       }),
     ],
