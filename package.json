@@ -46,6 +46,7 @@
     "presass": "stylelint \"$npm_package_config_css_src/**/*\" --fix",
     "sass": "sass $npm_package_config_css_src:$npm_package_config_css_dist --style=compressed",
     "postsass": "postcss $npm_package_config_css_dist/*.css --use=autoprefixer --dir=$npm_package_config_css_dist $npm_package_config_css_map",
+    "test": "npm run build",
     "webpack": "webpack $npm_package_config_js_src/$npm_package_config_js_entry -o $npm_package_config_js_dist/$npm_package_config_js_entry",
     "watch:imagemin": "onchange \"$npm_package_config_image_src/**/*\" -e \".DS_Store\" -- npm run imagemin",
     "watch:jekyll": "npm run jekyll:development -- -w",
