@@ -37,8 +37,8 @@
   "scripts": {
     "preinstall": "bundle install",
     "dev": "npm-run-all -p imagemin sass webpack -s jekyll:development -p browser watch",
-    "browser": "browser-sync \"_site\" -f \"_site\" --port $npm_package_config_browsersync_port",
     "build": "npm-run-all -p imagemin sass webpack -s jekyll:production",
+    "browser": "browser-sync \"_site\" -f \"_site\" --port $npm_package_config_browsersync_port",
     "jekyll": "bundle exec jekyll build",
     "jekyll:development": "npm run jekyll -- --config $npm_package_config_jekyll_config_default,$npm_package_config_jekyll_config_development",
     "jekyll:production": "npm run jekyll",
@@ -58,14 +58,15 @@
     "url": "https://github.com/ixkaito/frasco.git"
   },
   "keywords": [
-    "Autoprefixer",
-    "Browsersync",
-    "gulp",
-    "imagemin",
     "Jekyll",
-    "PostCSS",
+    "Browsersync",
     "Sass",
-    "Webpack"
+    "PostCSS",
+    "Autoprefixer",
+    "imagemin",
+    "Webpack",
+    "stylelint",
+    "ESLint"
   ],
   "author": "Kite",
   "license": "MIT",
