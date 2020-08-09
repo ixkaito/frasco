@@ -4,7 +4,7 @@ module.exports = {
     // For more environments, see here: http://eslint.org/docs/user-guide/configuring.html#specifying-environments
     'browser': true,
     'es6': true,
-    'node': true
+    'jquery': true
   },
   'rules': {
     // Insert custom rules here
