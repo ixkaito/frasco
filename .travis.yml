@@ -21,8 +21,8 @@ install:
   - gem install html-proofer
 
 script:
+  - npm run build
   - bundle exec jekyll build
-  - npm test
   - htmlproofer --url-ignore "/talk.jekyllrb.com/" ./_site
 
 sudo: false
