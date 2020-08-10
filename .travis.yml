@@ -20,6 +20,6 @@ install:
 script:
   - jekyll build
   - npm test
-  - htmlproofer --url-ignore "/gulpjs.com/,/img.shields.io/" ./_site
+  - htmlproofer --url-ignore "/img.shields.io/" ./_site
 
 sudo: false

@@ -40,7 +40,7 @@
     "browser": "browser-sync \"_site\" -f \"_site\" --port $npm_package_config_browsersync_port",
     "jekyll": "bundle exec jekyll build",
     "jekyll:development": "npm run jekyll -- --config $npm_package_config_jekyll_config_default,$npm_package_config_jekyll_config_development",
-    "jekyll:production": "npm run jekyll",
+    "jekyll:production": "JEKYLL_ENV=production npm run jekyll",
     "imagemin": "node imagemin \"$npm_package_config_image_src/**/*\" $npm_package_config_image_dist",
     "presass": "stylelint \"$npm_package_config_css_src/**/*\" --fix",
     "sass": "sass $npm_package_config_css_src:$npm_package_config_css_dist --style=compressed",

@@ -17,6 +17,8 @@ To use this Jekyll starter, you'll need the following things installed on your m
    ```shell
    $ git clone https://github.com/ixkaito/frasco.git
    ```
+   [Create a new repository from frasco](https://github.com/ixkaito/frasco/generate)
+   or
    [Download ZIP](https://github.com/ixkaito/frasco/archive/master.zip)
 
 2. Inside the directory, run `npm install` or `yarn`.
