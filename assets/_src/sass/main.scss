@@ -1,0 +1,241 @@
+@charset "UTF-8";
+// @import 'bourbon/bourbon';
+// @import 'neat/neat';
+// @import "base/base";
+@import 'variables';
+@import 'reset';
+@import 'monokai';
+@import 'monokai-custom';
+
+body {
+	background: $light-gray;
+	font-family: $open-sans;
+	letter-spacing: 0.05em;
+	line-height: 1.75;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+a {
+	color: $brand-color;
+	text-decoration: underline;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+pre {
+	line-height: 1;
+	overflow-y: auto;
+	padding: 1em;
+
+	code {
+		background: #000;
+		color: #fff;
+		line-height: 1.5;
+	}
+}
+
+code {
+	background: #e6e9ed;
+	border-radius: 2px;
+	display: inline-block;
+	font-family: $inconsolata;
+	line-height: 1.5;
+	padding: 0 0.3em;
+}
+
+br.desktop {
+	display: none;
+
+	@media screen and (min-width: 640px) {
+		display: block;
+	}
+}
+
+.highlight {
+	background: #000;
+	border-radius: 4px;
+}
+
+.hero {
+	// background: url(../images/noise.png), radial-gradient(#333, #222) repeat scroll 0 0;
+	background: radial-gradient(#333, #222) repeat scroll 0 0;
+	color: #ddd;
+	padding: 80px 20px 120px;
+
+	.logo {
+		padding: 20px;
+		text-align: center;
+	}
+
+	.copy {
+		margin: auto;
+		max-width: 330px;
+		text-align: center;
+		text-shadow: 0 1px 5px rgba(#000, 0.75);
+	}
+
+	.badges {
+		margin: 0;
+		margin-top: 30px;
+		padding: 0 20px;
+		text-align: center;
+
+		.fb_iframe_widget span {
+			vertical-align: top !important;
+		}
+
+		.twitter-share-button,
+		.twitter-follow-button {
+			vertical-align: top;
+		}
+
+		> li {
+			display: inline-block;
+
+		}
+	}
+}
+
+.footer {
+	background: #222;
+	color: #ddd;
+	font-size: 14px;
+	font-weight: 300;
+	padding: 1em;
+	text-align: center;
+}
+
+.quick-start {
+	background: #000;
+	border-radius: 4px;
+	box-shadow: 0 1px 5px rgba(#000, 0.75);
+	left: 0;
+	margin: 40px 20px;
+	max-width: 480px;
+	overflow: hidden;
+	position: absolute;
+	right: 0;
+
+	@media screen and (min-width: 520px) {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.quick-start-header {
+		background: #ddd;
+		color: #444;
+		text-align: center;
+		text-shadow: 0 1px 0 #fff;
+	}
+}
+
+.main {
+	box-shadow: 0 0 15px rgba(#000, 1);
+	padding: 120px 0;
+}
+
+.docs {
+	color: #333;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: $max-width;
+	overflow-y: auto;
+	padding: 0 20px;
+
+	h1 {
+		font-size: 48px;
+		font-weight: 300;
+		line-height: 1.25;
+
+		@media screen and (min-width: 480px) {
+			font-size: 60px;
+		}
+	}
+
+	h2 {
+		font-size: 40px;
+		font-weight: 300;
+		line-height: 1.25;
+		margin-top: 1em;
+
+		@media screen and (min-width: 480px) {
+			font-size: 48px;
+		}
+	}
+
+	h3 {
+		font-size: 32px;
+		font-weight: 300;
+		margin-top: 1em;
+
+		@media screen and (min-width: 480px) {
+			font-size: 36px;
+		}
+	}
+
+	h4 {
+		font-size: 24px;
+		font-weight: 300;
+		margin-top: 1em;
+
+		@media screen and (min-width: 480px) {
+			font-size: 28px;
+		}
+	}
+
+	h5 {
+		font-size: 20px;
+		margin-top: 1em;
+	}
+
+	p {
+		margin: 0.75em 0;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: #000;
+
+		+ h1,
+		+ h2,
+		+ h3,
+		+ h4,
+		+ h5,
+		+ h6,
+		+ p {
+			margin-top: 0;
+		}
+	}
+
+	table {
+		border: 1px solid #ccc;
+		width: 100%;
+	}
+
+	thead {
+		background: #eee;
+		border-bottom: 2px solid #ccc;
+	}
+
+	thead,
+	th {
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+
+	td,
+	th {
+		border: 1px solid #ccc;
+		padding: 0.3em 0.75em 0.4em;
+	}
+}
