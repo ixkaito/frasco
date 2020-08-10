@@ -18,8 +18,8 @@ install:
   - gem install jekyll html-proofer
 
 script:
-  - jekyll build
-  - npm test
-  - htmlproofer --url-ignore "/img.shields.io/" ./_site
+  - npm run build
+  - jekyll build -d _site/frasco
+  - htmlproofer --url-ignore "/img.shields.io/,/github.com/ixkaito/frasco/generate/" ./_site
 
 sudo: false
