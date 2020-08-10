@@ -29,8 +29,7 @@
     "jekyll": {
       "config": {
         "default": "_config.yml",
-        "development": "_config.dev.yml",
-        "production": "_config.prod.yml"
+        "development": "_config.dev.yml"
       }
     }
   },
