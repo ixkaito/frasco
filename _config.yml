@@ -30,3 +30,20 @@ twitter:
 
 facebook:
   admin: 1047363919
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - imagemin.js
+  - LICENSE
+  - node_modules/
+  - npm-debug.log
+  - package.json
+  - package-lock.json
+  - README.md
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - webpack.config.js
+  - yarn.lock
