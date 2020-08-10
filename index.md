@@ -44,10 +44,6 @@ This will set the `JEKYLL_ENV` to `production` to generate files.
 $ npm run build # or yarn build
 ```
 
-### Jekyll
-
-As this is just a Jekyll project, you can use any of the commands listed in their [docs](https://jekyllrb.com/docs/usage/).
-
 ## What's in Frasco
 
 - [Sass](http://sass-lang.com/)
