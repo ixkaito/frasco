@@ -1,6 +1,6 @@
 {
   "name": "frasco",
-  "version": "0.8.8",
+  "version": "1.0.0",
   "description": "Quick starter for Jekyll including full setup for Sass, PostCSS, Autoprefixer, stylelint, Webpack, ESLint, imagemin, Browsersync, etc.",
   "browserslist": [
     "> 1%",
