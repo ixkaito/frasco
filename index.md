@@ -1,6 +1,6 @@
 ---
 layout: index
-title: 'Frasco: Jekyll Starter Project'
+title: 'Frasco: Jekyll Quick Starter'
 ---
 
 ## System Preparation
