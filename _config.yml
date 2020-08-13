@@ -42,6 +42,7 @@ plugins:
 # their entries' file path in the `include:` list.
 #
 exclude:
+  - assets/_src/
   - Gemfile
   - Gemfile.lock
   - imagemin.js
