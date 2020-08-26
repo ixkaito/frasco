@@ -9,9 +9,13 @@ module.exports = {
     rules: [
       {
         enforce: 'pre',
-        test: /\.js$/,
+        test: /\.(js|ts)$/,
         exclude: /node_modules/,
         loader: 'eslint-loader',
+      },
+      {
+        test: /\.ts$/,
+        use: 'ts-loader',
       },
       {
         test: /\.js$/,
@@ -55,6 +59,9 @@ module.exports = {
         ],
       },
     ],
+  },
+  resolve: {
+    extensions: ['.ts', '.js'],
   },
   plugins: [
     new MiniCssExtractPlugin({
