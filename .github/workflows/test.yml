@@ -14,7 +14,6 @@ jobs:
     strategy:
       matrix:
         node: [ 12.x, 14.x ]
-        ruby: [ 2.5, 2.6, 2.7 ]
 
     steps:
     - uses: actions/checkout@v2
@@ -22,13 +21,13 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node: ${{ matrix.node }}
-    - name: Set up Ruby ${{ matrix.ruby }}
+    - name: Set up Ruby
     # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
     # change this to (see https://github.com/ruby/setup-ruby#versioning):
     # uses: ruby/setup-ruby@v1
       uses: ruby/setup-ruby@21351ecc0a7c196081abca5dc55b08f085efe09a
       with:
-        ruby-version: ${{ matrix.ruby }}
+        ruby-version: 2.6
         bundler-cache: true
     - run: npm install
     - run: gem install html-proofer
