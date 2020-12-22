@@ -1,0 +1,29 @@
+name: Test
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+    - name: Set up Ruby
+    # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
+    # change this to (see https://github.com/ruby/setup-ruby#versioning):
+    # uses: ruby/setup-ruby@v1
+      uses: ruby/setup-ruby@21351ecc0a7c196081abca5dc55b08f085efe09a
+      with:
+        ruby-version: 2.6
+        bundler-cache: true
+    - run: npm install
+    - run: gem install html-proofer
+    - run: npm run build
+    - run: bundle exec jekyll build
+    - run: htmlproofer --url-ignore "/talk.jekyllrb.com/" ./_site
