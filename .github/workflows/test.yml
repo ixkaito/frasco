@@ -2,25 +2,33 @@ name: Test
 
 on:
   push:
-    branches: [ master ]
+    branches: [ $default-branch ]
   pull_request:
-    branches: [ master ]
+    branches: [ $default-branch ]
 
 jobs:
   test:
 
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node: [12.x, 14.x]
+        ruby: [ '2.5', '2.6', '2.7' ]
+
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
-    - name: Set up Ruby
+    - name: Use Node.js ${{ matrix.node }}
+      uses: actions/setup-node@v1
+      with:
+        node: ${{ matrix.node }}
+    - name: Set up Ruby ${{ matrix.ruby }}
     # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
     # change this to (see https://github.com/ruby/setup-ruby#versioning):
     # uses: ruby/setup-ruby@v1
       uses: ruby/setup-ruby@21351ecc0a7c196081abca5dc55b08f085efe09a
       with:
-        ruby-version: 2.6
+        ruby-version: ${{ matrix.ruby }}
         bundler-cache: true
     - run: npm install
     - run: gem install html-proofer
