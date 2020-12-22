@@ -13,8 +13,8 @@ jobs:
 
     strategy:
       matrix:
-        node: [12.x, 14.x]
-        ruby: [ '2.5', '2.6', '2.7' ]
+        node: [ 12.x, 14.x ]
+        ruby: [ 2.5, 2.6, 2.7 ]
 
     steps:
     - uses: actions/checkout@v2
