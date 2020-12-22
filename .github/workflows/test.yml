@@ -34,4 +34,4 @@ jobs:
     - run: gem install html-proofer
     - run: npm run build
     - run: bundle exec jekyll build
-    - run: htmlproofer --url-ignore "/talk.jekyllrb.com/,twitter.com/ixkaito" ./_site
+    - run: htmlproofer --url-ignore "/talk.jekyllrb.com/,https://www.twitter.com/ixkaito" ./_site
