@@ -96,7 +96,7 @@
     "imagemin-jpegtran": "^6.0.0",
     "imagemin-optipng": "^7.1.0",
     "imagemin-svgo": "^7.1.0",
-    "mini-css-extract-plugin": "^0.9.0",
+    "mini-css-extract-plugin": "^1.6.0",
     "npm-run-all": "^4.1.5",
     "onchange": "^6.1.0",
     "postcss-cli": "^7.1.0",
@@ -108,7 +108,7 @@
     "stylelint-config-sass-guidelines": "^7.0.0",
     "ts-loader": "^8.0.3",
     "typescript": "^4.0.2",
-    "webpack": "^4.42.0",
+    "webpack": "^5.40.0",
     "webpack-cli": "^3.3.11"
   }
 }
